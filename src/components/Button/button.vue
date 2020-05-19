@@ -8,6 +8,7 @@
       { 'is-disabled': disabled }
     ]"
     :disabled="disabled"
+    @click="clickEvent"
   >
     <icon v-if="icon && !loading" :name="icon"/>
     <icon class="loading" v-if="loading" name="loading"/>
@@ -51,7 +52,12 @@ export default {
   data() {
     return {}
   },
-  created() {}
+  created() {},
+  methods:{
+    clickEvent(e){
+      this.$emit('click',e)
+    }
+  }
 }
 </script>
 
