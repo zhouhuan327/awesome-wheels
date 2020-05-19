@@ -9,8 +9,8 @@
     ]"
     :disabled="disabled"
   >
-
-    <icon v-if="icon" :name="icon"  />
+    <icon v-if="icon && !loading" :name="icon"/>
+    <icon class="loading" v-if="loading" name="loading"/>
     <slot></slot>
   </button>
 </template>
@@ -42,6 +42,10 @@ export default {
     icon:{
       type:String,
       default:''
+    },
+    loading:{
+      type:Boolean,
+      default:false
     }
   },
   data() {
@@ -52,17 +56,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon {
-    width: 1em;
-    height: 1em;
-    vertical-align: -0.15em;
-    fill: currentColor;
-    overflow: hidden;
-}
 @mixin btn-color($color, $bgcolor, $bdcolor) {
   color: $color;
   background-color: $bgcolor;
   border-color: $bdcolor;
+}
+@keyframes spin {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
 }
 .z-button {
   display: inline-block;
@@ -96,6 +97,9 @@ export default {
     border-color: #c6e2ff;
     background-color: #ecf5ff;
     transform: scale(0.95);
+  }
+  .loading{
+    animation:spin 1.5s infinite linear;
   }
   
 }

@@ -2,7 +2,7 @@
   <div id="app">
     <div class="row">
       <z-button icon="setting">默认按钮</z-button>
-      <z-button type="primary" >主要按钮</z-button>
+      <z-button :loading="true" type="primary" >主要按钮</z-button>
       <z-button type="success">成功按钮</z-button>
       <z-button type="info">信息按钮</z-button>
       <z-button type="warning">警告按钮</z-button>
@@ -33,7 +33,7 @@
       <z-button disabled type="danger">危险按钮</z-button>
     </div>
     <div class="row">
-      <z-icon name="setting" />
+      <z-icon name="loading" />
     </div>
   </div>
 </template>
