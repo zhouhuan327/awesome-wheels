@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div class="row">
-      <z-button>默认按钮</z-button>
-      <z-button type="primary" icon="setting">主要按钮</z-button>
+      <z-button icon="setting">默认按钮</z-button>
+      <z-button type="primary" >主要按钮</z-button>
       <z-button type="success">成功按钮</z-button>
       <z-button type="info">信息按钮</z-button>
       <z-button type="warning">警告按钮</z-button>
@@ -32,15 +32,20 @@
       <z-button disabled type="warning">警告按钮</z-button>
       <z-button disabled type="danger">危险按钮</z-button>
     </div>
+    <div class="row">
+      <z-icon name="setting" />
+    </div>
   </div>
 </template>
 
 <script>
 import Button from './components/Button/button.vue'
+import Icon from './components/icon.vue'
 export default {
   name: 'App',
   components: {
-    'z-button': Button
+    'z-button': Button,
+    'z-icon':Icon
   }
 }
 </script>

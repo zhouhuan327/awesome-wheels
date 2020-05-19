@@ -9,16 +9,19 @@
     ]"
     :disabled="disabled"
   >
-    <span>
-      <svg v-if="icon" class="icon"><use :xlink:href="`#icon-${icon}`"></use></svg>
-        <slot></slot>
-    </span>
+
+    <icon v-if="icon" :name="icon"  />
+    <slot></slot>
   </button>
 </template>
 
 <script>
+import Icon from '../icon.vue'
 export default {
   name: 'Button',
+  components:{
+    'icon':Icon
+  },
   props: {
     type: {
       type: String,
@@ -49,6 +52,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
 @mixin btn-color($color, $bgcolor, $bdcolor) {
   color: $color;
   background-color: $bgcolor;
@@ -59,23 +69,23 @@ export default {
   line-height: 1;
   white-space: nowrap;
   cursor: pointer;
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 4px;
   background: #fff;
   border: 1px solid #dcdfe6;
   border-color: #dcdfe6;
   color: #606266;
-  -webkit-appearance: none;
   text-align: center;
   box-sizing: border-box;
   outline: none;
   margin: 0;
   transition: 0.1s;
   font-weight: 500;
+  -webkit-appearance: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  font-size: 14px;
-  padding: 10px 15px;
-  border-radius: 4px;
   transition: all 0.1s ease-in-out;
   &:hover,
   &:focus {
