@@ -7,11 +7,14 @@
 <script>
 export default {
   name: 'button-group',
-  data() { 
-    return {
-
+    mounted(){
+        for(let node of this.$el.children){
+            const name = node.nodeName.toLowerCase()
+            if(name!== 'button'){
+                console.warn(`z-button-group's child should be z-button,but it contains ${name}`)
+            }
+        }
     }
-  }
  }
 </script>
 
