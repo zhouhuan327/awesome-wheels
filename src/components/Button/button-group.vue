@@ -8,10 +8,11 @@
 export default {
   name: 'button-group',
     mounted(){
+        //检测子元素是不是button
         for(let node of this.$el.children){
             const name = node.nodeName.toLowerCase()
             if(name!== 'button'){
-                console.warn(`z-button-group's child should be z-button,but it contains ${name}`)
+                console.warn(`z-button-group's children should be z-button,but it contains ${name}`)
             }
         }
     }
@@ -22,8 +23,10 @@ export default {
   .z-button-group{
       display: inline-flex;
       > .z-button{
-          border-radius: 0;
-          margin-left: -1px;
+          border-radius: 0; 
+          &:not(:first){
+              margin-left: -1px;
+          }
           &:first-child{
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
