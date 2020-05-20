@@ -37,7 +37,10 @@ const expect = chai.expect;
   expect(href).to.eq('#icon-loading')
 
 }
+import spies from 'chai-spies'
 {
+
+  chai.use(spies)
   const Constructor = Vue.extend(Button)
   const zbutton = new Constructor({
     propsData: {
@@ -45,9 +48,9 @@ const expect = chai.expect;
     }
   })
   zbutton.$mount()
-  zbutton.$on('click', function (e) {
-    console.log(e)
-  })
-  console.log(zbutton.$el)
+  //使用spy代替匿名函数
+  const spy = chai.spy(() => { console.log('click') })
+  zbutton.$on('click', spy)
   zbutton.$el.click()
+  expect(spy).to.have.been.called()
 }
