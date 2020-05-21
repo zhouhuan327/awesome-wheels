@@ -39,10 +39,10 @@
         <div></div>
       </z-button-group>
     <div class="row">
-      <z-row :gutter="20">
+      <z-row :gutter="20" align="center">
         <z-col :span="10" >1</z-col>
          <z-col :span="8">2</z-col>
-           <z-col >3</z-col>
+           
       </z-row>
     </div>
   </div>
