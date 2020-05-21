@@ -1,12 +1,7 @@
 <template>
   <button
     class="z-button"
-    :class="[
-      `z-button--${type}`,
-      { 'is-plain': plain },
-      { 'is-round': round },
-      { 'is-disabled': disabled }
-    ]"
+    :class="buttonClass"
     :disabled="disabled"
     @click="clickEvent"
   >
@@ -49,13 +44,20 @@ export default {
       default:false
     }
   },
-  data() {
-    return {}
-  },
-  created() {},
   methods:{
     clickEvent(e){
       this.$emit('click',e)
+    }
+  },
+  computed:{
+    buttonClass(){
+      let {type,plain,round,disabled} = this
+      return [
+      `z-button--${type}`,
+      { 'is-plain': plain },
+      { 'is-round': round },
+      { 'is-disabled': disabled }
+    ]
     }
   }
 }
