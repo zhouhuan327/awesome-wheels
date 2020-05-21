@@ -39,9 +39,10 @@
         <div></div>
       </z-button-group>
     <div class="row">
-      <z-row>
-        <z-col :span="10" offset="2">1</z-col>
+      <z-row :gutter="20">
+        <z-col :span="10" >1</z-col>
          <z-col :span="8">2</z-col>
+           <z-col >3</z-col>
       </z-row>
     </div>
   </div>

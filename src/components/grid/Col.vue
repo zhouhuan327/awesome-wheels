@@ -1,12 +1,19 @@
 <template>
-  <div class="z-col" :class="[`z-col-${span}`,offset && `offset-${offset}`]">
-
+  <div class="z-col" :class="[span && `z-col-${span}`,offset && `offset-${offset}`]"
+  :style="{paddingLeft:gutter/2+'px',paddingRight:gutter/2+'px'}"
+    >
+    <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
   name: 'z-col',
+  data(){
+    return {
+      gutter:0
+    }
+  },
   props:{
       span:[Number,String],
       offset:[Number,String]
