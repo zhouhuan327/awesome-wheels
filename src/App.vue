@@ -32,13 +32,17 @@
       <z-button disabled type="warning">警告按钮</z-button>
       <z-button disabled type="danger">危险按钮</z-button>
     </div>
-    <div class="">
-      <z-button-group>
+    <z-button-group>
         <z-button  icon="arrow-left">上一页</z-button>
         <z-button>更多</z-button>
         <z-button icon="arrow-right">下一页</z-button>
         <div></div>
       </z-button-group>
+    <div class="row">
+      <z-row>
+        <z-col :span="10">1</z-col>
+         <z-col :span="14">2</z-col>
+      </z-row>
     </div>
   </div>
 </template>
@@ -47,12 +51,16 @@
 import Button from './components/Button/button.vue'
 import Icon from './components/icon.vue'
 import ButtonGroup from '@/components/Button/button-group.vue'
+import Row from '@/components/grid/Row.vue'
+import Col from '@/components/grid/Col.vue'
 export default {
   name: 'App',
   components: {
     'z-button': Button,
     'z-icon':Icon,
-    'z-button-group':ButtonGroup
+    'z-button-group':ButtonGroup,
+    'z-row':Row,
+    'z-col':Col
   },
   methods:{
     clickEvent(e){

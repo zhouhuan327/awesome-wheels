@@ -1,6 +1,6 @@
 <template>
-  <div class="row">
-
+  <div class="z-row">
+    <slot></slot>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .row{
+  .z-row{
       display: flex;
   }
 </style>
