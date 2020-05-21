@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-// global css
-import '@/styles/index.scss'
-
+import '@/styles/index.scss' // global css
+import '@/assets/icon/iconfont.js' //icon
 Vue.config.productionTip = false
 
 new Vue({
