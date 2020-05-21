@@ -7,10 +7,8 @@
 <script>
 export default {
   name: 'z-row',
-  data() { 
-    return {
-
-    }
+  props:{
+     gutter:[Number,String]
   }
  }
 </script>
