@@ -1,5 +1,8 @@
 <template>
-	<div class="z-input" :class="{'error':error}">
+	<div
+		class="z-input"
+		:class="{'error':error,'z-input-suffix':suffixIcon,'z-input-prefix':prefixIcon}"
+	>
 		<input
 			type="text"
 			:value="value"
@@ -9,6 +12,12 @@
 			@focus="focusEvent"
 			@blur="blurEvent"
 		/>
+		<span v-if="suffixIcon" class="suffix-icon">
+			<Icon :name="suffixIcon" />
+		</span>
+		<span v-if="prefixIcon" class="prefix-icon">
+			<Icon :name="prefixIcon" />
+		</span>
 		<template class="error-msg" v-if="error">
 			<Icon name="setting" />
 			<span>{{error}}</span>
@@ -33,7 +42,16 @@ export default {
 		},
 		error: {
 			type: String
+		},
+		suffixIcon: {
+			type: String
+		},
+		prefixIcon: {
+			type: String
 		}
+	},
+	mounted() {
+		console.log(this.suffixIcon)
 	},
 	methods: {
 		changeEvent(e) {
@@ -57,6 +75,7 @@ $border-color: #dcdfe6;
 $border-hover-color: #bfcbd9;
 $box-shadow-color: #66b1ff45;
 .z-input {
+	position: relative;
 	display: inline-block;
 	font-size: 13px;
 	&.error {
@@ -88,6 +107,32 @@ $box-shadow-color: #66b1ff45;
 			color: #ccc;
 			cursor: not-allowed;
 		}
+	}
+	&.z-input-suffix {
+		> input {
+			padding: 0 20px 0 10px;
+		}
+	}
+	&.z-input-prefix {
+		> input {
+			padding: 0 10px 0 25px;
+		}
+	}
+	.suffix-icon {
+		font-size: 18px;
+		position: absolute;
+		height: 100%;
+		right: 5px;
+		line-height: 32px;
+		color: #c0c4cc;
+	}
+	.prefix-icon {
+		font-size: 18px;
+		position: absolute;
+		height: 100%;
+		left: 5px;
+		line-height: 32px;
+		color: #c0c4cc;
 	}
 }
 </style>

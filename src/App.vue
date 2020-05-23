@@ -2,7 +2,8 @@
 	<div id="app">
 		<z-input value="12" disabled />
 		<z-input @change="change" error="出错了" value="1233" />
-		<z-input v-model="message" />
+		<z-input suffixIcon="setting" v-model="message" />
+		<z-input prefixIcon="setting" v-model="message" />
 		{{message}}
 		<!-- <div class="row">
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
