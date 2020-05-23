@@ -38,53 +38,18 @@ describe('input', () => {
         })
     })
     describe('event', () => {
-        it('trigger change event', async () => {
-            const spy = sinon.spy()
-            const wrapper = mount(Input, {
-                propsData: {
-                    eventCalled: spy
-                }
+        it('测试 event', () => {
+            const events = ['change', 'input', 'focus', 'blur']
+            events.forEach(eventName => {
+                const spy = sinon.fake()
+                const vm = mount(Input).vm
+                vm.$on(eventName, spy)
+                let event = new Event(eventName)
+                let el = vm.$el.querySelector('input')
+                el.dispatchEvent(event)
+                expect(spy.calledWith(event)).to.be.true
             })
-            wrapper.find('input').trigger('change')
-            await wrapper.vm.$nextTick()
 
-            expect(spy.calledWith('change')).to.be.true
-        })
-        it('trigger input event', async () => {
-            const spy = sinon.spy()
-            const wrapper = mount(Input, {
-                propsData: {
-                    eventCalled: spy
-                }
-            })
-            wrapper.find('input').trigger('input')
-            await wrapper.vm.$nextTick()
-
-            expect(spy.calledWith('input')).to.be.true
-        })
-        it('trigger focus event', async () => {
-            const spy = sinon.spy()
-            const wrapper = mount(Input, {
-                propsData: {
-                    eventCalled: spy
-                }
-            })
-            wrapper.find('input').trigger('focus')
-            await wrapper.vm.$nextTick()
-
-            expect(spy.calledWith('input')).to.be.true
-        })
-        it('trigger blur event', async () => {
-            const spy = sinon.spy()
-            const wrapper = mount(Input, {
-                propsData: {
-                    eventCalled: spy
-                }
-            })
-            wrapper.find('input').trigger('blur')
-            await wrapper.vm.$nextTick()
-
-            expect(spy.calledWith('blur')).to.be.true
         })
     })
 })

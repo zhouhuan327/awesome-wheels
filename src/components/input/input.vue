@@ -33,27 +33,19 @@ export default {
 		},
 		error: {
 			type: String
-		},
-		eventCalled: {
-			//用来触发测试
-			type: Function
 		}
 	},
 	methods: {
 		changeEvent(e) {
-			this.eventCalled && this.eventCalled('change')
 			this.$emit('change', e)
 		},
 		inputEvent(e) {
-			this.eventCalled && this.eventCalled('input')
 			this.$emit('input', e)
 		},
 		focusEvent(e) {
-			this.eventCalled && this.eventCalled('input')
 			this.$emit('focus', e)
 		},
 		blurEvent(e) {
-			this.eventCalled && this.eventCalled('blur')
 			this.$emit('blur', e)
 		}
 	}
