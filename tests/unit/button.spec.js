@@ -1,28 +1,30 @@
 import { expect } from 'chai'
 import Button from '@/components/Button/button.vue'
-import Vue from 'vue'
+import { mount } from '@vue/test-utils'
 describe('Button.vue', () => {
     it('测试icon', () => {
         //测试icon
-        const Constructor = Vue.extend(Button)
-        const button = new Constructor({
+        // const Constructor = Vue.extend(Button)
+        // const button = new Constructor({
+        //     propsData: {
+        //         icon: 'setting'
+        //     }
+        // })
+        // button.$mount()
+        const button = mount(Button, {
             propsData: {
                 icon: 'setting'
             }
-        })
-        button.$mount()
+        }).vm
         const href = button.$el.querySelector('use').getAttribute('xlink:href')
         expect(href).to.eq('#icon-setting')
     })
     it('测试loading', () => {
-        const Constructor = Vue.extend(Button)
-        const button = new Constructor({
+        const button = mount(Button, {
             propsData: {
-                icon: 'setting',
-                loading: true
+                icon: 'loading'
             }
-        })
-        button.$mount()
+        }).vm
         const href = button.$el.querySelector('use').getAttribute('xlink:href')
         expect(href).to.eq('#icon-loading')
     })
