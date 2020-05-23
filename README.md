@@ -1,6 +1,6 @@
 # 一个名字还没有想好的 VUE UI 组件库
 
-[![Build Status](https://www.travis-ci.org/zhouhuan327/vue-wheels.svg?branch=master)](https://www.travis-ci.org/zhouhuan327/vue-wheels)
+[![Build Status](https://www.travis-ci.org/zhouhuan327/awesome-wheels.svg?branch=master)](https://www.travis-ci.org/zhouhuan327/awesome-wheels)
 
 ## 介绍
 

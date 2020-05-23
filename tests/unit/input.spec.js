@@ -47,7 +47,7 @@ describe('input', () => {
                 let event = new Event(eventName)
                 let el = vm.$el.querySelector('input')
                 el.dispatchEvent(event)
-                expect(spy.calledWith(event)).to.be.true
+                expect(spy.called).to.be.true
             })
 
         })
