@@ -1,6 +1,14 @@
 <template>
 	<div class="z-input" :class="{'error':error}">
-		<input type="text" :value="value" :disabled="disabled" />
+		<input
+			type="text"
+			:value="value"
+			:disabled="disabled"
+			@change="changeEvent"
+			@input="inputEvent"
+			@focus="focusEvent"
+			@blur="blurEvent"
+		/>
 		<template class="error-msg" v-if="error">
 			<Icon name="setting" />
 			<span>{{error}}</span>
@@ -25,10 +33,29 @@ export default {
 		},
 		error: {
 			type: String
+		},
+		eventCalled: {
+			//用来触发测试
+			type: Function
 		}
 	},
-	data() {
-		return {}
+	methods: {
+		changeEvent(e) {
+			this.eventCalled && this.eventCalled('change')
+			this.$emit('change', e)
+		},
+		inputEvent(e) {
+			this.eventCalled && this.eventCalled('input')
+			this.$emit('input', e)
+		},
+		focusEvent(e) {
+			this.eventCalled && this.eventCalled('input')
+			this.$emit('focus', e)
+		},
+		blurEvent(e) {
+			this.eventCalled && this.eventCalled('blur')
+			this.$emit('blur', e)
+		}
 	}
 }
 </script>

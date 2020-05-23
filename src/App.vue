@@ -1,7 +1,7 @@
 <template>
 	<div id="app">
 		<z-input value="12" disabled />
-		<z-input error="出错了" value="1233" />
+		<z-input @change="change" error="出错了" value="1233" />
 		<!-- <div class="row">
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 			<z-button :loading="true" type="primary">主要按钮</z-button>
@@ -78,6 +78,9 @@ export default {
 	},
 	methods: {
 		clickEvent(e) {
+			console.log(e)
+		},
+		change(e) {
 			console.log(e)
 		}
 	}

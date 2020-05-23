@@ -39,7 +39,7 @@ describe('grid-layout', () => {
             done()
         })
     })
-    if ('offset是否生效', () => {
+    it('offset是否生效', () => {
         const vm = mount(Col, {
             propsData: {
                 offset: 2
@@ -47,16 +47,16 @@ describe('grid-layout', () => {
         }).vm
         expect(vm.$el.classList.contains('offset-2')).to.eq(true)
     })
-        it('是否响应式', () => {
-            const vm = mount(Col, {
-                propsData: {
-                    sm: 24,
-                    md: 12,
-                    lg: 6,
-                }
-            }).vm
-            expect(vm.$el.classList.contains('z-col-sm-24')).to.eq(true)
-            expect(vm.$el.classList.contains('z-col-md-12')).to.eq(true)
-            expect(vm.$el.classList.contains('z-col-lg-6')).to.eq(true)
-        })
+    it('是否响应式', () => {
+        const vm = mount(Col, {
+            propsData: {
+                sm: 24,
+                md: 12,
+                lg: 6,
+            }
+        }).vm
+        expect(vm.$el.classList.contains('z-col-sm-24')).to.eq(true)
+        expect(vm.$el.classList.contains('z-col-md-12')).to.eq(true)
+        expect(vm.$el.classList.contains('z-col-lg-6')).to.eq(true)
+    })
 })

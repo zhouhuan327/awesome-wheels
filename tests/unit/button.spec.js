@@ -28,4 +28,5 @@ describe('Button.vue', () => {
         const href = button.$el.querySelector('use').getAttribute('xlink:href')
         expect(href).to.eq('#icon-loading')
     })
+
 })
