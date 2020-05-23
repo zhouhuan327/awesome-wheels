@@ -13,11 +13,11 @@
         "ui"
     ],
     "dependencies": {
-        "@types/sinon": "^9.0.4",
         "core-js": "^3.6.4",
         "vue": "^2.6.11"
     },
     "devDependencies": {
+        "@types/sinon": "^9.0.4",
         "@types/chai": "^4.2.11",
         "@vue/cli-plugin-babel": "~4.2.0",
         "@vue/cli-plugin-unit-jest": "~4.3.0",

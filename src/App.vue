@@ -2,6 +2,8 @@
 	<div id="app">
 		<z-input value="12" disabled />
 		<z-input @change="change" error="出错了" value="1233" />
+		<z-input v-model="message" />
+		{{message}}
 		<!-- <div class="row">
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 			<z-button :loading="true" type="primary">主要按钮</z-button>
@@ -75,6 +77,11 @@ export default {
 		'z-row': Row,
 		'z-col': Col,
 		'z-input': Input
+	},
+	data() {
+		return {
+			message: '222'
+		}
 	},
 	methods: {
 		clickEvent(e) {

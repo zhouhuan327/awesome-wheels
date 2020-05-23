@@ -40,7 +40,7 @@ export default {
 			this.$emit('change', e)
 		},
 		inputEvent(e) {
-			this.$emit('input', e)
+			this.$emit('input', e.target.value)
 		},
 		focusEvent(e) {
 			this.$emit('focus', e)
