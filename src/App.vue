@@ -1,6 +1,8 @@
 <template>
 	<div id="app">
-		<div class="row">
+		<z-input value="12" disabled />
+		<z-input error="出错了" value="1233" />
+		<!-- <div class="row">
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 			<z-button :loading="true" type="primary">主要按钮</z-button>
 			<z-button type="success">成功按钮</z-button>
@@ -53,7 +55,7 @@
 					<div class="rowElement">4</div>
 				</z-col>
 			</z-row>
-		</div>
+		</div>-->
 	</div>
 </template>
 
@@ -63,6 +65,7 @@ import Icon from './components/icon.vue'
 import ButtonGroup from '@/components/Button/button-group.vue'
 import Row from '@/components/grid/Row.vue'
 import Col from '@/components/grid/Col.vue'
+import Input from '@/components/input/input.vue'
 export default {
 	name: 'App',
 	components: {
@@ -70,7 +73,8 @@ export default {
 		'z-icon': Icon,
 		'z-button-group': ButtonGroup,
 		'z-row': Row,
-		'z-col': Col
+		'z-col': Col,
+		'z-input': Input
 	},
 	methods: {
 		clickEvent(e) {
