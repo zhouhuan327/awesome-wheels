@@ -86,8 +86,13 @@ export default {
 		}
 	},
 	methods: {
-		clickEvent(e) {
-			this.$message("message")
+		clickEvent() {
+			this.$message({
+				type:'danger',
+				message:'这是一段消息',
+				duration:3,
+				showClose:true
+			})
 		},
 
 	}
