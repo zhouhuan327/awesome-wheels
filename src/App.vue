@@ -89,9 +89,10 @@ export default {
 		clickEvent() {
 			this.$message({
 				type:'danger',
-				message:'这是一段消息',
-				duration:10,
-				showClose:true
+				message:`<strong>这是一段消息</strong>`,
+				duration:3,
+				showClose:true,
+				useHtmlString:true
 			})
 		},
 

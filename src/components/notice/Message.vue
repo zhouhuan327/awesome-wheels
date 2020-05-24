@@ -1,6 +1,7 @@
 <template>
     <div class="z-message" :class="msgClass">
-        <slot></slot>
+        <slot v-if="!useHtmlString"></slot>
+        <div v-else v-html="$slots.default"></div>
         <span class="closeButton" v-if="showClose" @click="close">x</span>
     </div>
 </template>
@@ -25,6 +26,10 @@
             showClose:{
                 type:Boolean,
                 default:false
+            },
+            useHtmlString:{
+                type:Boolean,
+                default:false
             }
         },
         mounted() {
@@ -36,11 +41,12 @@
         methods:{
             close(){
                 this.$el.classList.remove('pull')
-                this.$destroy()
+
                 setTimeout(()=>{
                     //等动画结束后再移除元素
                     this.$el.remove()
-                },200)
+                    this.$destroy()
+                },300)
 
             }
         },
@@ -77,6 +83,7 @@
     line-height: 1.8px;
     padding: 5px 16px;
     @include message-color(gray,#edf2fc,#edf2fc);
+    opacity: 0;
     transition: all 0.3s ease-in-out;
     .closeButton{
         position: absolute;
@@ -87,6 +94,7 @@
     }
 }
     .pull{
+        opacity: 1;
         top:20px;
     }
     .z-message.z-message--success{

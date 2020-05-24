@@ -8,7 +8,7 @@ export default {
             }else{
                 message = config.message;
             }
-            let { type, duration,showClose} = config
+            let { type, duration,showClose,useHtmlString} = config
 
 
             let Constructor = Vue.extend(Message)
@@ -16,7 +16,8 @@ export default {
                 propsData:{
                     type:type,
                     duration:duration,
-                    showClose:showClose
+                    showClose:showClose,
+                    useHtmlString:useHtmlString
                 }
             })
             vm.$slots.default = message
