@@ -33,7 +33,7 @@
             }
         },
         mounted() {
-            console.log()
+
             setTimeout(()=>{
                 this.close()
             },this.duration*1000)

@@ -3,7 +3,7 @@ import { expect } from 'chai'
 import Row from '@/components/grid/Row.vue'
 import Col from '@/components/grid/Col.vue'
 import Vue from 'vue'
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 describe('grid-layout', () => {
     it('存在', () => {
         expect(Row).to.exist

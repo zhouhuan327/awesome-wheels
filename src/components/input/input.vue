@@ -51,7 +51,7 @@ export default {
 		}
 	},
 	mounted() {
-		console.log(this.suffixIcon)
+		// console.log(this.suffixIcon)
 	},
 	methods: {
 		changeEvent(e) {
