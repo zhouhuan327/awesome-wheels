@@ -1,10 +1,11 @@
 <template>
 	<div id="app">
-		<z-input value="12" disabled />
-		<z-input @change="change" error="出错了" value="1233" />
-		<z-input suffixIcon="setting" v-model="message" />
-		<z-input prefixIcon="setting" v-model="message" />
-		{{message}}
+		<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
+<!--		<z-input value="12" disabled />-->
+<!--		<z-input @change="change" error="出错了" value="1233" />-->
+<!--		<z-input suffixIcon="setting" v-model="message" />-->
+<!--		<z-input prefixIcon="setting" v-model="message" />-->
+<!--		{{message}}-->
 		<!-- <div class="row">
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 			<z-button :loading="true" type="primary">主要按钮</z-button>
@@ -86,11 +87,9 @@ export default {
 	},
 	methods: {
 		clickEvent(e) {
-			console.log(e)
+			this.$message("message")
 		},
-		change(e) {
-			console.log(e)
-		}
+
 	}
 }
 </script>
