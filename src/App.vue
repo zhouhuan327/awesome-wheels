@@ -90,7 +90,7 @@ export default {
 			this.$message({
 				type:'danger',
 				message:'这是一段消息',
-				duration:3,
+				duration:10,
 				showClose:true
 			})
 		},

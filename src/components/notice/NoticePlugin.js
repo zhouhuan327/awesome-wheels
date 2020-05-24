@@ -22,6 +22,7 @@ export default {
             vm.$slots.default = message
             vm.$mount()
             document.body.appendChild(vm.$el);
+            setTimeout(()=>{vm.$el.classList.add('pull')},0)
         }
     }
 }

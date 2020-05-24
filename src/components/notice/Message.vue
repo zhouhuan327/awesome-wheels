@@ -8,6 +8,11 @@
 <script>
     export default {
         name: "Message",
+        data(){
+          return {
+              animate:''
+          }
+        },
         props:{
             type:{
                 type:String,
@@ -23,14 +28,20 @@
             }
         },
         mounted() {
+            console.log()
             setTimeout(()=>{
                 this.close()
             },this.duration*1000)
         },
         methods:{
             close(){
-                this.$el.remove()
+                this.$el.classList.remove('pull')
                 this.$destroy()
+                setTimeout(()=>{
+                    //等动画结束后再移除元素
+                    this.$el.remove()
+                },200)
+
             }
         },
         computed:{
@@ -55,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     position: fixed;
-    top: 20px;
+    top: -$box-height;
     left: 50%;
     transform: translateX(-50%);
     height: $box-height;
@@ -66,6 +77,7 @@
     line-height: 1.8px;
     padding: 5px 16px;
     @include message-color(gray,#edf2fc,#edf2fc);
+    transition: all 0.3s ease-in-out;
     .closeButton{
         position: absolute;
         top: 20px;
@@ -74,6 +86,9 @@
         cursor: pointer;
     }
 }
+    .pull{
+        top:20px;
+    }
     .z-message.z-message--success{
         @include message-color(#67c23a, #f0f9eb, #e1f3d8)
     }
@@ -83,4 +98,5 @@
     .z-message.z-message--danger{
         @include message-color(#f56c6c,#fef0f0,#fef0f0)
     }
+
 </style>
