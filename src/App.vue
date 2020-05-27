@@ -1,6 +1,11 @@
 <template>
 	<div id="app">
-		<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
+		<z-popover>
+			<template slot="content">
+				ddd
+			</template>
+			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
+		</z-popover>
 <!--		<z-input value="12" disabled />-->
 <!--		<z-input @change="change" error="出错了" value="1233" />-->
 <!--		<z-input suffixIcon="setting" v-model="message" />-->
@@ -70,6 +75,7 @@ import ButtonGroup from '@/components/Button/button-group.vue'
 import Row from '@/components/grid/Row.vue'
 import Col from '@/components/grid/Col.vue'
 import Input from '@/components/input/input.vue'
+import Popover from "@/components/Popover/Popover";
 export default {
 	name: 'App',
 	components: {
@@ -78,7 +84,8 @@ export default {
 		'z-button-group': ButtonGroup,
 		'z-row': Row,
 		'z-col': Col,
-		'z-input': Input
+		'z-input': Input,
+		'z-popover':Popover
 	},
 	data() {
 		return {
@@ -105,7 +112,8 @@ export default {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
+	display: flex;
+	align-items: center;
 	color: #2c3e50;
 	margin-top: 20px;
 }
