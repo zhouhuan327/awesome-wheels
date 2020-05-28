@@ -1,4 +1,5 @@
 module.exports = {
+    base:"/awesome-wheels/",
     title: '还没想好',
     description: 'Just playing around',
     themeConfig:{

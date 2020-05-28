@@ -2,8 +2,10 @@
 title: 按钮 
 ---
 # 默认按钮
+<ClientOnly>
+    <button-demo></button-demo>
+</ClientOnly>
 
-<button-demo></button-demo>
 ```javascript
 <template>
     <div>
