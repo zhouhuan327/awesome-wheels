@@ -3,6 +3,7 @@
 </template>
 
 <script>
+  import '@/assets/icon/iconfont'
 export default {
   name: 'Icon',
   props:['name'],
