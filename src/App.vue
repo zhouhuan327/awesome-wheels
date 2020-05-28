@@ -1,11 +1,30 @@
 <template>
 	<div id="app">
-		<z-popover>
+		<z-popover position="top">
 			<template slot="content">
-				dd
+				toptoptoptoptoptoptop
 			</template>
-			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
+			<z-button icon="setting">top</z-button>
 		</z-popover>
+		<z-popover position="bottom">
+			<template slot="content">
+				bottombottombottombottombottom
+			</template>
+			<z-button icon="setting">bottom</z-button>
+		</z-popover>
+		<z-popover position="left">
+			<template slot="content">
+				left
+			</template>
+			<z-button icon="setting">left</z-button>
+		</z-popover>
+		<z-popover position="right">
+			<template slot="content">
+				right
+			</template>
+			<z-button icon="setting">right</z-button>
+		</z-popover>
+<!--		<z-button @click="clickEvent" icon="setting">默认按钮</z-button>-->
 <!--		<z-input value="12" disabled />-->
 <!--		<z-input @change="change" error="出错了" value="1233" />-->
 <!--		<z-input suffixIcon="setting" v-model="message" />-->
@@ -114,6 +133,7 @@ export default {
 	-moz-osx-font-smoothing: grayscale;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	color: #2c3e50;
 	margin-top: 20px;
 }
