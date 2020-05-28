@@ -1,5 +1,5 @@
 <template>
-    <div class="z-popover" @click="onClickTrigger">
+    <div class="z-popover" ref="popover">
         <!--        触发的元素-->
         <span ref="trigger" style="display: inline-block">
             <slot></slot>
@@ -30,6 +30,22 @@
                 validator(value) {
                     return ['top','left','right','bottom'].includes(value)
                 }
+            },
+            trigger:{
+                type:String,
+                default:'click',
+                validator(value) {
+                    return ['click','hover'].includes(value)
+                }
+            }
+        },
+        mounted() {
+            const popover = this.$refs.popover
+            if(this.trigger === 'click'){
+                popover.addEventListener('click',this.onClickTrigger)
+            }else{
+                popover.addEventListener('mouseenter',this.openByHover)
+                popover.addEventListener('mouseleave',this.closeByHover)
             }
         },
         methods:{
@@ -40,11 +56,11 @@
 
                 switch (this.position) {
                     case "top":
-                        content.style.left = left - width  + 'px'
+                        content.style.left = left   + 'px'
                         content.style.top = top + 'px'
                         break
                     case "bottom":
-                        content.style.left = left - width + 'px'
+                        content.style.left = left  + 'px'
                         content.style.top = top + height + 'px'
                         break
                     case "left":
@@ -68,26 +84,35 @@
                     }
                 }
             },
-            open(){
+            openByClick(){
                 this.isVisible = true
                 this.$nextTick(()=>{
                     this.movePostion()
                     document.addEventListener('click',this.onClickDocument)
                 })
             },
-            close(){
+            closeByClick(){
                 this.isVisible = false;
                 document.removeEventListener('click',this.onClickDocument)
             },
             onClickTrigger(e){
                 if(this.$refs.trigger.contains(e.target)){
                     if(this.isVisible === false){
-                        this.open()
+                        this.openByClick()
                     }else{
-                        this.close()
+                        this.closeByClick()
                     }
                 }
-            }
+            },
+            openByHover(){
+                this.isVisible = true
+                this.$nextTick(()=>{
+                    this.movePostion()
+                })
+            },
+            closeByHover(){
+                this.isVisible = false;
+            },
 
 
         }
@@ -124,8 +149,6 @@
             margin-top: -12px;
             &::before{
                 top: 100%;
-                left: 50%;
-                transform: translateX(-50%);
                 border: 10px solid transparent;
                 border-top-color: $popover-bg-color;
             }
@@ -134,8 +157,6 @@
             margin-top: 12px;
             &::before{
                 bottom: 100%;
-                left: 50%;
-                transform: translateX(-50%);
                 border: 10px solid transparent;
                 border-bottom-color: $popover-bg-color;
             }
@@ -144,9 +165,7 @@
             transform: translateX(-100%);
             margin-left: -12px;
             &::before{
-                top: 50%;
                 left: 100%;
-                transform: translateY(-50%);
                 border: 10px solid transparent;
                 border-left-color: $popover-bg-color;
             }
@@ -154,9 +173,7 @@
         &.position-right{
             margin-left: 12px;
             &::before{
-                top: 50%;
                 right: 100%;
-                transform: translateY(-50%);
                 border: 10px solid transparent;
                 border-right-color: $popover-bg-color;
             }
