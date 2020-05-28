@@ -2,7 +2,7 @@
 	<div id="app">
 		<z-popover>
 			<template slot="content">
-				ddd
+				dd
 			</template>
 			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 		</z-popover>
