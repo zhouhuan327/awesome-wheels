@@ -6,7 +6,7 @@
         "dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "test": "vue-cli-service test:unit",
-        "docs:dev": "vuepress dev docs --temp .temp\"",
+        "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs"
     },
     "author": "zhou huan",
