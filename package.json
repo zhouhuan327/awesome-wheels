@@ -5,7 +5,9 @@
     "scripts": {
         "dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
-        "test": "vue-cli-service test:unit"
+        "test": "vue-cli-service test:unit",
+        "docs:dev": "vuepress dev docs --temp .temp\"",
+        "docs:build": "vuepress build docs"
     },
     "author": "zhou huan",
     "keywords": [
@@ -17,8 +19,8 @@
         "vue": "^2.6.11"
     },
     "devDependencies": {
-        "@types/sinon": "^9.0.4",
         "@types/chai": "^4.2.11",
+        "@types/sinon": "^9.0.4",
         "@vue/cli-plugin-babel": "~4.2.0",
         "@vue/cli-plugin-unit-jest": "~4.3.0",
         "@vue/cli-service": "~4.2.0",
@@ -29,7 +31,8 @@
         "sass": "^1.25.0",
         "sass-loader": "^8.0.2",
         "sinon": "^9.0.2",
-        "vue-template-compiler": "^2.6.11"
+        "vue-template-compiler": "^2.6.11",
+        "vuepress": "^1.5.0"
     },
     "browserslist": [
         "> 1%",

@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	$light-blue: #409eff;
+	$light-blue-hover: #66b1ff;
+	$light-little-blue: #bfcbd9;
 @mixin btn-color($color, $bgcolor, $bdcolor) {
 	color: $color;
 	background-color: $bgcolor;
