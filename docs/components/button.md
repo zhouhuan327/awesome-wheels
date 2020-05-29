@@ -1,9 +1,11 @@
 ---
-title: 按钮 
+title: 按钮
 ---
+
 # 默认按钮
+
 <ClientOnly>
-    <button-demo></button-demo>
+<ButtonDemo></ButtonDemo>
 </ClientOnly>
 
 ```javascript
@@ -14,3 +16,5 @@ title: 按钮
     </div>
 </template>
 ```
+
+dfddffd

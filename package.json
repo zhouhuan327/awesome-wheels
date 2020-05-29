@@ -6,7 +6,7 @@
         "dev": "vue-cli-service serve",
         "build": "vue-cli-service build",
         "test": "vue-cli-service test:unit",
-        "docs:dev": "vuepress dev docs",
+        "docs:dev": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev docs",
         "docs:build": "vuepress build docs"
     },
     "author": "zhou huan",
@@ -37,5 +37,8 @@
     "browserslist": [
         "> 1%",
         "last 2 versions"
-    ]
+    ],
+    "resolutions": {
+        "watchpack": "1.6.1"
+    }
 }
