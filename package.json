@@ -1,13 +1,15 @@
 {
     "name": "awesome-wheels",
     "version": "0.0.1",
-    "main": "index.js",
+    "main": "./dist/awesome-wheels.common.js",
     "scripts": {
-        "dev": "vue-cli-service serve",
+        "dev": "vue-cli-service serve --open",
         "build": "vue-cli-service build",
+        "build-bundle": "vue-cli-service build --target lib --name awesome-wheels src/index.js",
         "test": "vue-cli-service test:unit",
         "docs:dev": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev docs",
-        "docs:build": "vuepress build docs"
+        "docs:build": "vuepress build docs",
+        "deploy": "./deploy.sh"
     },
     "author": "zhou huan",
     "keywords": [
@@ -23,10 +25,11 @@
         "@types/sinon": "^9.0.4",
         "@vue/cli-plugin-babel": "~4.2.0",
         "@vue/cli-plugin-unit-jest": "~4.3.0",
-        "@vue/cli-service": "~4.2.0",
+        "@vue/cli-service": "^4.4.1",
         "@vue/test-utils": "1.0.0-beta.31",
         "chai": "^4.2.0",
         "chai-spies": "^1.0.0",
+        "cross-env": "^7.0.2",
         "mocha": "^7.1.2",
         "sass": "^1.25.0",
         "sass-loader": "^8.0.2",
