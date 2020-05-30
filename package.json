@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "main": "./dist/awesome-wheels.common.js",
     "scripts": {
-        "dev": "vue-cli-service serve --open",
+        "dev": "vue-cli-service serve --mode development --open",
         "build": "vue-cli-service build",
         "build-bundle": "vue-cli-service build --target lib --name awesome-wheels src/index.js",
         "test": "vue-cli-service test:unit",
