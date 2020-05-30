@@ -5,7 +5,7 @@
 <script>
   import '../assets/icon/iconfont'
 export default {
-  name: 'Icon',
+  name: 'z-icon',
   props:['name'],
   data() { 
     return {

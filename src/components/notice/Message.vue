@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: "Message",
+        name: "z-message",
         data(){
           return {
               animate:''

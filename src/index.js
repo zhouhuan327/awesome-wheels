@@ -6,4 +6,29 @@ import Col from "./components/grid/Col";
 import NoticePlugin from "./components/notice/NoticePlugin";
 import Popover from "./components/Popover/Popover";
 
-export { Button,ButtonGroup,Icon,Row,Col,NoticePlugin,Popover }
+
+const components = [
+    Button,
+    ButtonGroup,
+    Icon,
+    Row,
+    Col,
+    Popover
+]
+const install = function (Vue) {
+    components.forEach(component => {
+        Vue.component(component.name,component)
+    })
+    Vue.use(NoticePlugin)
+
+}
+export default {
+    install,
+    Button,
+    ButtonGroup,
+    Icon,
+    Row,
+    Col,
+    NoticePlugin,
+    Popover
+}
