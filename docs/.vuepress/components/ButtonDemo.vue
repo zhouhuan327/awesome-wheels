@@ -1,7 +1,29 @@
 <template>
-    <div>
-        <z-button  icon="setting">默认按钮</z-button>
-        <z-button :loading="true" type="primary">主要按钮</z-button>
+    <div class="container">
+        <div>
+            <z-button >默认按钮</z-button>
+            <z-button type="primary">主要按钮</z-button>
+            <z-button type="success">成功按钮</z-button>
+            <z-button type="info">信息按钮</z-button>
+            <z-button type="warning">警告按钮</z-button>
+            <z-button type="danger">危险按钮</z-button>
+        </div>
+        <div>
+            <z-button plain>默认按钮</z-button>
+            <z-button plain type="primary">主要按钮</z-button>
+            <z-button plain type="success">成功按钮</z-button>
+            <z-button plain type="info">信息按钮</z-button>
+            <z-button plain type="warning">警告按钮</z-button>
+            <z-button plain type="danger">危险按钮</z-button>
+        </div>
+        <div>
+            <z-button plain round>默认按钮</z-button>
+            <z-button plain round type="primary">主要按钮</z-button>
+            <z-button plain round type="success">成功按钮</z-button>
+            <z-button plain round type="info">信息按钮</z-button>
+            <z-button plain round type="warning">警告按钮</z-button>
+            <z-button plain round type="danger">危险按钮</z-button>
+        </div>
     </div>
 </template>
 <script>
@@ -12,3 +34,11 @@
         }
     }
 </script>
+<style lang="scss" scoped>
+    .container{
+        .z-button {
+            margin: 5px;
+        }
+    }
+
+</style>

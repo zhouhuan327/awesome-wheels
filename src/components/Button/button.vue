@@ -85,19 +85,17 @@ export default {
 	border-radius: 4px;
 	background: #fff;
 	border: 1px solid #dcdfe6;
-	border-color: #dcdfe6;
 	color: #606266;
 	text-align: center;
 	box-sizing: border-box;
 	outline: none;
 	margin: 0;
-	transition: 0.1s;
 	font-weight: 500;
 	-webkit-appearance: none;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
-	transition: all 0.1s ease-in-out;
+	transition: transform 0.1s ease-in-out,background-color 0.3s ease;
 	&:hover,
 	&:focus {
 		@include btn-color($light-blue, #ecf5ff, #c6e2ff);
@@ -121,7 +119,7 @@ export default {
 	pointer-events: none;
 }
 .z-button--primary {
-	@include btn-color(#fff, $light-blue, $light-blue);
+	@include btn-color(#fff, #40a9ff, #40a9ff);
 	&:hover,
 	&:focus {
 		@include btn-color(#fff, $light-blue-hover, $light-blue-hover);
@@ -179,7 +177,7 @@ export default {
 	}
 }
 .z-button--danger {
-	@include btn-color(#fff, #f56c6c, #f56c6c);
+	@include btn-color(#fff, #ff4d4f, #ff4d4f);
 	&:hover,
 	&:focus {
 		@include btn-color(#fff, #f78989, #f78989);

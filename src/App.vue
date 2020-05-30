@@ -35,15 +35,14 @@
 
 
 
-		<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
 <!--		<z-input value="12" disabled />-->
 <!--		<z-input  error="出错了" value="1233" />-->
 <!--		<z-input suffixIcon="setting" v-model="message" />-->
 <!--		<z-input prefixIcon="setting" v-model="message" />-->
 <!--		{{message}}-->
-		<!-- <div class="row">
-			<z-button @click="clickEvent" icon="setting">默认按钮</z-button>
-			<z-button :loading="true" type="primary">主要按钮</z-button>
+		<div class="row">
+			<z-button @click="clickEvent" >默认按钮</z-button>
+			<z-button  type="primary">主要按钮</z-button>
 			<z-button type="success">成功按钮</z-button>
 			<z-button type="info">信息按钮</z-button>
 			<z-button type="warning">警告按钮</z-button>
@@ -79,22 +78,22 @@
 			<z-button icon="arrow-right">下一页</z-button>
 			<div></div>
 		</z-button-group>
-		<div class="row">
-			<z-row :gutter="20" align="center">
-				<z-col :span="24" :sm="12" :md="6">
-					<div class="rowElement">1</div>
-				</z-col>
-				<z-col :span="24" :sm="12" :md="6">
-					<div class="rowElement">2</div>
-				</z-col>
-				<z-col :span="24" :sm="12" :md="6">
-					<div class="rowElement">3</div>
-				</z-col>
-				<z-col :span="24" :sm="12" :md="6">
-					<div class="rowElement">4</div>
-				</z-col>
-			</z-row>
-		</div>-->
+<!--		<div class="row">-->
+<!--			<z-row :gutter="20" align="center">-->
+<!--				<z-col :span="24" :sm="12" :md="6">-->
+<!--					<div class="rowElement">1</div>-->
+<!--				</z-col>-->
+<!--				<z-col :span="24" :sm="12" :md="6">-->
+<!--					<div class="rowElement">2</div>-->
+<!--				</z-col>-->
+<!--				<z-col :span="24" :sm="12" :md="6">-->
+<!--					<div class="rowElement">3</div>-->
+<!--				</z-col>-->
+<!--				<z-col :span="24" :sm="12" :md="6">-->
+<!--					<div class="rowElement">4</div>-->
+<!--				</z-col>-->
+<!--			</z-row>-->
+<!--		</div>-->
 	</div>
 </template>
 
@@ -142,9 +141,6 @@ export default {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 	color: #2c3e50;
 	margin-top: 20px;
 }
