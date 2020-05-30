@@ -7,7 +7,7 @@
         "build": "vue-cli-service build",
         "build-bundle": "vue-cli-service build --target lib --name awesome-wheels src/index.js",
         "test": "vue-cli-service test:unit",
-        "docs:dev": "nodemon --ext md,vue --watch .vuepress --watch . --exec vuepress dev docs",
+        "docs:dev": "vuepress dev docs",
         "docs:build": "vuepress build docs",
         "deploy": "./deploy.sh"
     },

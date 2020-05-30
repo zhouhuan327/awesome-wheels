@@ -1,10 +1,14 @@
 module.exports = {
     base:"/awesome-wheels/",
-    title: '还没想好',
-    description: 'Just playing around',
+    title: 'awesome-wheels',
+    description: 'A Vue based component library',
     themeConfig:{
+        nav: [
+            { text: '主页', link: '/' },
+            { text: 'GitHub', link: 'https://github.com/zhouhuan327/awesome-wheels' },
+        ],
         sidebar: [
-            '/',
+            '/guide/',
             {
                 title: '开发指南',   // 必要的
                 collapsable: false, // 可选的, 默认值是 true,
