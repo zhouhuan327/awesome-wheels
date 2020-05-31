@@ -21,23 +21,40 @@ title: Button 按钮
     <z-button type="info">信息按钮</z-button>
     <z-button type="warning">警告按钮</z-button>
     <z-button type="danger">危险按钮</z-button>
+    <z-button round type="danger">圆角</z-button>
 </div>
 <div>
-    <z-button plain>默认按钮</z-button>
+    <z-button plain >默认按钮</z-button>
     <z-button plain type="primary">主要按钮</z-button>
     <z-button plain type="success">成功按钮</z-button>
     <z-button plain type="info">信息按钮</z-button>
     <z-button plain type="warning">警告按钮</z-button>
     <z-button plain type="danger">危险按钮</z-button>
+    <z-button round plain type="danger">圆角</z-button>
 </div>
-<div>
-    <z-button plain round>默认按钮</z-button>
-    <z-button plain round type="primary">主要按钮</z-button>
-    <z-button plain round type="success">成功按钮</z-button>
-    <z-button plain round type="info">信息按钮</z-button>
-    <z-button plain round type="warning">警告按钮</z-button>
-    <z-button plain round type="danger">危险按钮</z-button>
-</div>
+```
+
+## 渐变动画背景
+
+<ClientOnly>
+<ButtonGraient></ButtonGraient>
+</ClientOnly>
+
+```javascript
+<template>
+    <div class="container">
+        <z-button class="bg1" gradient>Hover Me</z-button>
+        <z-button class="bg2" gradient>Hover Me</z-button>
+    </div>
+</template>
+<style scoped>
+.bg1.gradient-bg{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+.bg2.gradient-bg{
+    background: linear-gradient(90deg, #1ed0cb, #7182d9, #ef7d3d, #69bce0);
+}
+</style>
 ```
 
 ## 禁用状态

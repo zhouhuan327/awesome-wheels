@@ -41,12 +41,12 @@
 <!--		<z-input prefixIcon="setting" v-model="message" />-->
 <!--		{{message}}-->
 <!--		<div class="row">-->
-			<z-button icon="thumbs-up">默认按钮</z-button>
-			<z-button icon="start"  type="primary">主要按钮</z-button>
-			<z-button icon="plus" type="success">成功按钮</z-button>
-			<z-button icon="thumbs-up" type="info">信息按钮</z-button>
-			<z-button type="warning">警告按钮</z-button>
-			<z-button type="danger">危险按钮</z-button>
+			<z-button gradient >默认按钮</z-button>
+<!--			<z-button icon="start"  type="primary">主要按钮</z-button>-->
+<!--			<z-button icon="plus" type="success">成功按钮</z-button>-->
+<!--			<z-button icon="thumbs-up" type="info">信息按钮</z-button>-->
+<!--			<z-button type="warning">警告按钮</z-button>-->
+<!--			<z-button type="danger">危险按钮</z-button>-->
 <!--		</div>-->
 <!--		<div class="row">-->
 <!--			<z-button plain>默认按钮</z-button>-->
@@ -148,6 +148,11 @@ export default {
 	margin-bottom: 20px;
 	.z-button {
 		margin-right: 10px;
+	}
+}
+.z-button{
+	&.gradient-bg{
+		background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 	}
 }
 .rowElement {
