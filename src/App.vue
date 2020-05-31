@@ -41,7 +41,7 @@
 <!--		<z-input prefixIcon="setting" v-model="message" />-->
 <!--		{{message}}-->
 <!--		<div class="row">-->
-			<z-button gradient >默认按钮</z-button>
+			<z-button icon="setting" gradient >默认按钮</z-button>
 <!--			<z-button icon="start"  type="primary">主要按钮</z-button>-->
 <!--			<z-button icon="plus" type="success">成功按钮</z-button>-->
 <!--			<z-button icon="thumbs-up" type="info">信息按钮</z-button>-->

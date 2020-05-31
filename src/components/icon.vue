@@ -3,6 +3,7 @@
 </template>
 
 <script>
+  import '../assets/iconfont'
 export default {
   name: 'z-icon',
   props:['name'],
@@ -21,7 +22,7 @@ export default {
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
-    margin:0 2px;
+    margin:0 5px;
 }
 
 </style>
