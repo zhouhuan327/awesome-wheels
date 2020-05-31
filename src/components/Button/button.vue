@@ -81,7 +81,7 @@ export default {
 	white-space: nowrap;
 	cursor: pointer;
 	font-size: 14px;
-	padding: 10px 15px;
+	padding: 10px 10px;
 	border-radius: 4px;
 	background: #fff;
 	border: 1px solid #dcdfe6;

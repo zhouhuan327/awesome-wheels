@@ -41,7 +41,6 @@
         methods:{
             close(){
                 this.$el.classList.remove('pull')
-
                 setTimeout(()=>{
                     //等动画结束后再移除元素
                     this.$el.remove()
@@ -68,6 +67,7 @@
         border-color: $bdcolor;
     }
 .z-message{
+    z-index: 999;
     display: flex;
     align-items: center;
     justify-content: space-between;

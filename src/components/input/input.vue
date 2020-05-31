@@ -11,6 +11,7 @@
 			@input="inputEvent"
 			@focus="focusEvent"
 			@blur="blurEvent"
+			:placeholder="placeholder"
 		/>
 		<span v-if="suffixIcon" class="suffix-icon">
 			<Icon :name="suffixIcon" />
@@ -18,10 +19,10 @@
 		<span v-if="prefixIcon" class="prefix-icon">
 			<Icon :name="prefixIcon" />
 		</span>
-		<template class="error-msg" v-if="error">
-			<Icon name="setting" />
+		<div class="error-msg" v-if="error">
+			<Icon name="error" />
 			<span>{{error}}</span>
-		</template>
+		</div>
 	</div>
 </template>
 
@@ -48,6 +49,9 @@ export default {
 		},
 		prefixIcon: {
 			type: String
+		},
+		placeholder:{
+			type:String
 		}
 	},
 	mounted() {
@@ -74,10 +78,11 @@ export default {
 $border-color: #dcdfe6;
 $border-hover-color: #bfcbd9;
 $box-shadow-color: #66b1ff45;
+$placeholder: rgba(96, 98, 102, 0.52);
 .z-input {
 	position: relative;
 	display: inline-block;
-	font-size: 13px;
+	font-size: 14px;
 	&.error {
 		> input,
 		input:hover,
@@ -91,7 +96,6 @@ $box-shadow-color: #66b1ff45;
 		border: 1px solid $border-color;
 		border-radius: 4px;
 		padding: 0 10px;
-		font-size: 12px;
 		transition: 0.2s all ease-in;
 		&:hover {
 			border-color: $border-hover-color;
@@ -102,7 +106,7 @@ $box-shadow-color: #66b1ff45;
 		}
 		&[disabled] {
 			opacity: 1;
-			background-color: #fff;
+			background-color: #f5f7fa;
 			border-color: #e4e7ed;
 			color: #ccc;
 			cursor: not-allowed;
@@ -119,7 +123,7 @@ $box-shadow-color: #66b1ff45;
 		}
 	}
 	.suffix-icon {
-		font-size: 18px;
+		font-size: inherit;
 		position: absolute;
 		height: 100%;
 		right: 5px;
@@ -127,12 +131,29 @@ $box-shadow-color: #66b1ff45;
 		color: #c0c4cc;
 	}
 	.prefix-icon {
-		font-size: 18px;
+		font-size: inherit;
 		position: absolute;
 		height: 100%;
 		left: 5px;
 		line-height: 32px;
 		color: #c0c4cc;
+	}
+	::-webkit-input-placeholder {
+		color: $placeholder;
+	}
+	:-moz-placeholder {/* Firefox 18- */
+		color: $placeholder;
+	}
+	::-moz-placeholder{/* Firefox 19+ */
+		color: $placeholder;
+	}
+	:-ms-input-placeholder {
+		color: $placeholder;
+	}
+	.error-msg{
+		padding: 5px;
+		font-size: inherit;
+		color: red;
 	}
 }
 </style>
