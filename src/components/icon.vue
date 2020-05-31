@@ -3,7 +3,6 @@
 </template>
 
 <script>
-  import '../assets/icon/iconfont'
 export default {
   name: 'z-icon',
   props:['name'],
