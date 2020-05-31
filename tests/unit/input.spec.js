@@ -32,7 +32,7 @@ describe('input', () => {
                 }
             }).vm
             const useElement = vm.$el.querySelector('use')
-            expect(useElement.getAttribute("xlink:href")).to.eq('#icon-setting')
+            expect(useElement.getAttribute("xlink:href")).to.eq('#icon-error')
             const spanElement = vm.$el.querySelector('span')
             expect(spanElement.innerHTML).to.eq("错误信息")
         })
