@@ -1,0 +1,83 @@
+$light-blue: #409eff;
+$light-blue-hover: #66b1ff;
+$light-little-blue: #bfcbd9;
+@mixin btn-color($color, $bgcolor, $bdcolor) {
+  color: $color;
+  background-color: $bgcolor;
+  border-color: $bdcolor;
+}
+
+.z-button{
+  &.z-button--primary {
+    @include btn-color(#fff, #40a9ff, #40a9ff);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, $light-blue-hover, $light-blue-hover);
+    }
+  }
+  &.z-button--primary.is-plain {
+    @include btn-color(#409eff, #ecf5ff, #b3d8ff);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, $light-blue, $light-blue);
+    }
+  }
+
+  &.z-button--success {
+    @include btn-color(#fff, #67c23a, #67c23a);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #85ce61, #85ce61);
+    }
+  }
+  &.z-button--success.is-plain {
+    @include btn-color(#67c23a, #f0f9eb, #c2e7b0);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #67c23a, #67c23a);
+    }
+  }
+  &.z-button--info {
+    @include btn-color(#fff, #909399, #909399);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #a6a9ad, #a6a9ad);
+    }
+  }
+  &.z-button--info.is-plain {
+    @include btn-color(#909399, #f4f4f5, #f4f4f5);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #a6a9ad, #a6a9ad);
+    }
+  }
+
+  &.z-button--warning {
+    @include btn-color(#fff, #e6a23c, #e6a23c);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #ebb563, #ebb563);
+    }
+  }
+  &.z-button--warning.is-plain {
+    @include btn-color(#e6a23c, #fdf6ec, #f5dab1);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #ebb563, #ebb563);
+    }
+  }
+  &.z-button--danger {
+    @include btn-color(#fff, #ff4d4f, #ff4d4f);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #f78989, #f78989);
+    }
+  }
+  &.z-button--danger.is-plain {
+    @include btn-color(#f56c6c, #fef0f0, #fbc4c4);
+    &:hover,
+    &:focus {
+      @include btn-color(#fff, #f56c6c, #f78989);
+    }
+  }
+}
