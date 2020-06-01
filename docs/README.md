@@ -2,7 +2,7 @@
 home: true
 heroImage: /logo.png
 heroText: awesome-wheels
-tagline: 一个vue的ui库
+tagline: 花里胡哨的组件库
 actionText: getStart →
 actionLink: /guide/
 features:

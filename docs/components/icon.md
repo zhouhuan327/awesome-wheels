@@ -17,23 +17,25 @@ title: Icon 图标
 </ClientOnly>
 
 ```javascript
-<template>
-<div class="container">
-    <z-icon name="setting"></z-icon>
-    <z-icon name="start"></z-icon>
-    <z-icon name="thumbs-up"></z-icon>
-    <z-icon name="plus"></z-icon>
-    <z-icon name="minus"></z-icon>
-    <z-icon name="arrow-right"></z-icon>
-    <z-icon name="arrow-left"></z-icon>
-</div>
-</template>
-<style scoped>
-    .container{
-        font-size: 25px;
-    }
-</style>
+ <z-icon name="setting"></z-icon>
+ <z-icon name="start"></z-icon>
+ <z-icon name="thumbs-up"></z-icon>
 ```
+
+## 悬浮效果的Icon按钮
+
+设置cool-hover属性，指定iconname和传入默认插槽
+
+<ClientOnly>
+<Icon3D></Icon3D>
+</ClientOnly>
+
+```javascript
+<z-icon cool-hover="start">收藏</z-icon>
+<z-icon cool-hover="thumbs-up">点赞</z-icon>
+<z-icon cool-hover="setting">设置</z-icon>
+```
+
 
 ## 配合button使用 
 
@@ -62,3 +64,4 @@ title: Icon 图标
     </div>
 </div>
 ```
+

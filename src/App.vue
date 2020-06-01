@@ -1,5 +1,6 @@
 <template>
 	<div id="app">
+		<z-icon cool-hover="start">Star</z-icon>
 <!--		<z-row class="row">-->
 <!--			<z-popover position="top">-->
 <!--				<template slot="content">-->
@@ -41,7 +42,7 @@
 <!--		<z-input prefixIcon="setting" v-model="message" />-->
 <!--		{{message}}-->
 <!--		<div class="row">-->
-			<z-button icon="setting" gradient >默认按钮</z-button>
+<!--			<z-button icon="setting" gradient >默认按钮</z-button>-->
 <!--			<z-button icon="start"  type="primary">主要按钮</z-button>-->
 <!--			<z-button icon="plus" type="success">成功按钮</z-button>-->
 <!--			<z-button icon="thumbs-up" type="info">信息按钮</z-button>-->
@@ -141,6 +142,7 @@ export default {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	padding: 20px;
 	color: #2c3e50;
 	margin-top: 20px;
 }

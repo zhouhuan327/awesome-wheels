@@ -1,9 +1,10 @@
 <template>
     <div class="container">
-        <z-icon name="setting"></z-icon>
-        <z-icon name="start"></z-icon>
-        <z-icon name="thumbs-up"></z-icon>
+        <z-icon cool-hover="start">收藏</z-icon>
+        <z-icon cool-hover="thumbs-up">点赞</z-icon>
+        <z-icon cool-hover="setting">设置</z-icon>
     </div>
+
 </template>
 
 <script>
@@ -18,6 +19,6 @@
 
 <style scoped>
     .container{
-        font-size: 25px;
+        display: flex;
     }
 </style>

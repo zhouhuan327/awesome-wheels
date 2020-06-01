@@ -1,6 +1,6 @@
 {
     "name": "awesome-wheels",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "main": "./dist/awesome-wheels.umd.js",
     "scripts": {
         "dev": "vue-cli-service serve --mode development --open",
