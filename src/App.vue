@@ -33,11 +33,12 @@
 <!--				<z-button icon="setting">hover</z-button>-->
 <!--			</z-popover>-->
 <!--		</z-row>-->
-		<z-tab>
-			<z-tab-panel label="标签1" name="first">内容1</z-tab-panel>
+		<z-tab v-model="selectedName">
+			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>
 			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>
 			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>
 		</z-tab>
+		{{selectedName}}
 	</div>
 </template>
 
@@ -66,7 +67,8 @@ export default {
 	},
 	data() {
 		return {
-			message: '222'
+			message: '222',
+			selectedName:'first'
 		}
 	},
 	methods: {

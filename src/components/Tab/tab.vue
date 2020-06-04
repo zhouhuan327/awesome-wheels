@@ -18,7 +18,7 @@
         data() {
             return {
                 eventBus: new Vue(),
-                panes: []
+                panes: [],
             }
         },
         provide() {
@@ -27,10 +27,13 @@
                 selectedName:this.selectedName
             }
         },
+        model:{
+            prop:'selectedName'
+        },
         props: {
-            selectedName: {
+            selectedName:{
                 type: String,
-                default:'first'
+                required: true
             },
             direction: {
                 type: String,
@@ -46,12 +49,12 @@
                     if('z-tab-panel' === vnode.componentOptions.tag){
                         const instance = vnode.componentInstance
                         this.panes.push(instance)
-                        // if(instance.$options.propsData.name === this.selectedName){
-                        //     this.eventBus.$emit('update:selected', this.selectedName, instance)
-                        // }
                     }
                 })
             }
+            this.eventBus.$on('update:selected',name=>{
+                this.$emit('input',name)
+            })
         }
     }
 </script>

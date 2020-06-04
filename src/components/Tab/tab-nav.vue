@@ -49,6 +49,7 @@
         justify-content: flex-start;
         height: 40px;
         margin-bottom: 10px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
         .z-tab_active-bar{
             position: absolute;
             bottom: 0;
