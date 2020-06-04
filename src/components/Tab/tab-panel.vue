@@ -1,5 +1,5 @@
 <template>
-    <div class="z-tab-panel" v-if="active">
+    <div class="z-tab-panel" :style="{display:active?null:'none'}">
         <slot></slot>
     </div>
 </template>

@@ -76,7 +76,6 @@
         &.z-tab-card{
             .z-tab-item{
                 border: 1px solid #e4e7ed;
-                border-bottom-color: transparent;
                 border-radius:2px 2px 0 0;
                 background-color: #fafafa;
                 z-index: 4;
