@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<z-icon cool-hover="start">Star</z-icon>
+<!--		<z-icon cool-hover="start">Star</z-icon>-->
 <!--		<z-row class="row">-->
 <!--			<z-popover position="top">-->
 <!--				<template slot="content">-->
@@ -33,79 +33,24 @@
 <!--				<z-button icon="setting">hover</z-button>-->
 <!--			</z-popover>-->
 <!--		</z-row>-->
-
-
-
-<!--		<z-input value="12" disabled />-->
-<!--		<z-input  error="出错了" value="1233" />-->
-<!--		<z-input suffixIcon="setting" v-model="message" />-->
-<!--		<z-input prefixIcon="setting" v-model="message" />-->
-<!--		{{message}}-->
-<!--		<div class="row">-->
-<!--			<z-button icon="setting" gradient >默认按钮</z-button>-->
-<!--			<z-button icon="start"  type="primary">主要按钮</z-button>-->
-<!--			<z-button icon="plus" type="success">成功按钮</z-button>-->
-<!--			<z-button icon="thumbs-up" type="info">信息按钮</z-button>-->
-<!--			<z-button type="warning">警告按钮</z-button>-->
-<!--			<z-button type="danger">危险按钮</z-button>-->
-<!--		</div>-->
-<!--		<div class="row">-->
-<!--			<z-button plain>默认按钮</z-button>-->
-<!--			<z-button plain type="primary">主要按钮</z-button>-->
-<!--			<z-button plain type="success">成功按钮</z-button>-->
-<!--			<z-button plain type="info">信息按钮</z-button>-->
-<!--			<z-button plain type="warning">警告按钮</z-button>-->
-<!--			<z-button plain type="danger">危险按钮</z-button>-->
-<!--		</div>-->
-<!--		<div class="row">-->
-<!--			<z-button plain round>默认按钮</z-button>-->
-<!--			<z-button plain round type="primary">主要按钮</z-button>-->
-<!--			<z-button plain round type="success">成功按钮</z-button>-->
-<!--			<z-button plain round type="info">信息按钮</z-button>-->
-<!--			<z-button plain round type="warning">警告按钮</z-button>-->
-<!--			<z-button plain round type="danger">危险按钮</z-button>-->
-<!--		</div>-->
-<!--		<div class="row">-->
-<!--			<z-button>默认按钮</z-button>-->
-<!--			<z-button disabled type="primary">主要按钮</z-button>-->
-<!--			<z-button disabled type="success">成功按钮</z-button>-->
-<!--			<z-button disabled type="info">信息按钮</z-button>-->
-<!--			<z-button disabled type="warning">警告按钮</z-button>-->
-<!--			<z-button disabled type="danger">危险按钮</z-button>-->
-<!--		</div>-->
-<!--		<z-button-group>-->
-<!--			<z-button icon="arrow-left">上一页</z-button>-->
-<!--			<z-button>更多</z-button>-->
-<!--			<z-button icon="arrow-right">下一页</z-button>-->
-<!--			<div></div>-->
-<!--		</z-button-group>-->
-<!--		<div class="row">-->
-<!--			<z-row :gutter="20" align="center">-->
-<!--				<z-col :span="24" :sm="12" :md="6">-->
-<!--					<div class="rowElement">1</div>-->
-<!--				</z-col>-->
-<!--				<z-col :span="24" :sm="12" :md="6">-->
-<!--					<div class="rowElement">2</div>-->
-<!--				</z-col>-->
-<!--				<z-col :span="24" :sm="12" :md="6">-->
-<!--					<div class="rowElement">3</div>-->
-<!--				</z-col>-->
-<!--				<z-col :span="24" :sm="12" :md="6">-->
-<!--					<div class="rowElement">4</div>-->
-<!--				</z-col>-->
-<!--			</z-row>-->
-<!--		</div>-->
+		<z-tab>
+			<z-tab-panel label="第一">第一页</z-tab-panel>
+			<z-tab-panel label="第二">第二页</z-tab-panel>
+			<z-tab-panel label="第三">第三页</z-tab-panel>
+		</z-tab>
 	</div>
 </template>
 
 <script>
 import Button from './components/Button/button.vue'
 import Icon from './components/icon.vue'
-import ButtonGroup from '@/components/Button/button-group.vue'
-import Row from '@/components/grid/Row.vue'
-import Col from '@/components/grid/Col.vue'
-import Input from '@/components/input/input.vue'
-import Popover from "@/components/Popover/Popover";
+import ButtonGroup from './components/Button/button-group.vue'
+import Row from './components/grid/Row.vue'
+import Col from './components/grid/Col.vue'
+import Input from './components/input/input.vue'
+import Popover from "./components/Popover/Popover";
+import Tab from '@/components/Tab/tab'
+import TabPanel from '@/components/Tab/tab-panel'
 export default {
 	name: 'App',
 	components: {
@@ -115,7 +60,9 @@ export default {
 		'z-row': Row,
 		'z-col': Col,
 		'z-input': Input,
-		'z-popover':Popover
+		'z-popover':Popover,
+		'z-tab':Tab,
+		'z-tab-panel':TabPanel
 	},
 	data() {
 		return {
@@ -161,6 +108,6 @@ export default {
 	width: 100%;
 	height: 100%;
 	border-radius: 4px;
-	background: #d3dce6;
+	background: #d3dce6
 }
 </style>
