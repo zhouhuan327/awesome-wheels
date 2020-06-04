@@ -24,7 +24,8 @@
         provide() {
             return {
                 eventBus: this.eventBus,
-                selectedName:this.selectedName
+                selectedName:this.selectedName,
+                type:this.type
             }
         },
         model:{
@@ -41,6 +42,10 @@
                 validator(value) {
                     return ['horizontal', 'vertical'].indexOf(value) >= 0
                 }
+            },
+            type:{
+                type:String,
+                default:'normal'
             }
         },
         mounted() {

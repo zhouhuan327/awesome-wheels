@@ -1,12 +1,12 @@
 <template>
-    <div class="z-tab-nav" ref="nav">
+    <div class="z-tab-nav" :class="navClass" ref="nav">
         <template v-for="item in panes">
             <z-tab-item
                     :label="item.$options.propsData.label"
                     :name="item.$options.propsData.name"
             ></z-tab-item>
         </template>
-        <div class="z-tab_active-bar" ref="bar"></div>
+        <div :hidden="type === 'card'" class="z-tab_active-bar" ref="bar"></div>
     </div>
 </template>
 
@@ -17,7 +17,7 @@
         components:{
           'z-tab-item':tabItem
         },
-        inject:['eventBus'],
+        inject:['eventBus','type'],
         props:{
             panes:{
                 type:Array
@@ -37,6 +37,13 @@
                 this.$refs.bar.style.left = `${ left - navLeft }px`
 
             }
+        },
+        computed:{
+            navClass(){
+                return {
+                    'z-tab-card':this.type === 'card'
+                }
+            }
         }
 
     }
@@ -49,14 +56,33 @@
         justify-content: flex-start;
         height: 40px;
         margin-bottom: 10px;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        &::before{
+            content:'';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom:1px solid #f0f0f0;
+            z-index: 2;
+        }
         .z-tab_active-bar{
             position: absolute;
             bottom: 0;
             border-bottom: 2px solid #1890ff;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             height: 2px;
             width: 50px;
+        }
+        &.z-tab-card{
+            .z-tab-item{
+                border: 1px solid rgba(0,0,0,0.2);
+                border-radius:2px 2px 0 0;
+                margin-right: 2px;
+                z-index: 4;
+                &.active{
+                    border-bottom-color:#fff
+                }
+            }
         }
     }
 </style>

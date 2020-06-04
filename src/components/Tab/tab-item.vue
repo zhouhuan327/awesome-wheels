@@ -16,15 +16,15 @@
                 active: false
             }
         },
-        inject:['eventBus','selectedName'],
+        inject:['eventBus','selectedName','type'],
         mounted() {
+            this.eventBus.$on('update:selected',(name,vm) => {
+                this.active = name === this.name
+            })
             if(this.selectedName === this.name){
                 this.eventBus.$emit('update:selected', this.name, this)
             }
-            this.eventBus.$on('update:selected',(name,vm) => {
-                // console.log(`${name}被选中,${this.label}收到`,vm)
-                this.active = name === this.name
-            })
+
         },
         methods:{
             onClick(){
@@ -34,7 +34,7 @@
         computed:{
             itemClass(){
                 return {
-                    'active':this.active
+                    'active':this.active,
                 }
             }
         }
@@ -50,7 +50,7 @@
         padding: 0 1em;
         cursor: pointer;
         height: 100%;
-        transition: all 0.2s ease;
+        transition: all 0.4s ease;
         &:hover{
             color: $tab-active-color;
         }
@@ -58,5 +58,6 @@
             color: $tab-active-color;
             font-weight: 500;
         }
+
     }
 </style>
