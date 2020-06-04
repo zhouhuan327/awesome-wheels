@@ -23,7 +23,8 @@
         },
         provide() {
             return {
-                eventBus: this.eventBus
+                eventBus: this.eventBus,
+                selectedName:this.selectedName
             }
         },
         props: {
@@ -45,9 +46,9 @@
                     if('z-tab-panel' === vnode.componentOptions.tag){
                         const instance = vnode.componentInstance
                         this.panes.push(instance)
-                        if(instance.$options.propsData.name === this.selectedName){
-                            this.eventBus.$emit('update:selected', this.selectedName, instance)
-                        }
+                        // if(instance.$options.propsData.name === this.selectedName){
+                        //     this.eventBus.$emit('update:selected', this.selectedName, instance)
+                        // }
                     }
                 })
             }

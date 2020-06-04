@@ -16,8 +16,11 @@
                 active: false
             }
         },
-        inject:['eventBus'],
+        inject:['eventBus','selectedName'],
         mounted() {
+            if(this.selectedName === this.name){
+                this.eventBus.$emit('update:selected', this.name, this)
+            }
             this.eventBus.$on('update:selected',(name,vm) => {
                 // console.log(`${name}被选中,${this.label}收到`,vm)
                 this.active = name === this.name
