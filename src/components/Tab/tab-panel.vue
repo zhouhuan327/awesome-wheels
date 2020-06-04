@@ -31,6 +31,6 @@
 
 <style lang="scss" scoped>
     .z-tab-panel{
-        padding: 0 1em;
+        padding: 20px 1em;
     }
 </style>

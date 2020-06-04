@@ -38,13 +38,13 @@
 			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>
 			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>
 		</z-tab>
-		{{selectedName}}
+		<p>{{selectedName}}</p>
 		<z-tab  v-model="selectedName">
 			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>
 			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>
 			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>
 		</z-tab>
-		{{selectedName}}
+		<p>{{selectedName}}</p>
 	</div>
 </template>
 

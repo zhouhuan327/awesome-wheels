@@ -75,11 +75,13 @@
         }
         &.z-tab-card{
             .z-tab-item{
-                border: 1px solid rgba(0,0,0,0.2);
+                border: 1px solid #e4e7ed;
+                border-bottom-color: transparent;
                 border-radius:2px 2px 0 0;
-                margin-right: 2px;
+                background-color: #fafafa;
                 z-index: 4;
                 &.active{
+                    background: #fff;
                     border-bottom-color:#fff
                 }
             }
