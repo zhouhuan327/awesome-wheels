@@ -27,8 +27,9 @@
             }
         },
         props: {
-            selected: {
+            selectedName: {
                 type: String,
+                default:'first'
             },
             direction: {
                 type: String,
@@ -38,23 +39,22 @@
                 }
             }
         },
-
         mounted() {
             if (this.$slots.default) {
-                this.$slots.default.forEach(vnode =>{
-                    if('z-tab-panel' === vnode.componentOptions.tag && vnode.componentOptions && vnode.tag){
-                        this.panes.push(vnode.componentInstance)
+                this.$slots.default.forEach( vnode =>{
+                    if('z-tab-panel' === vnode.componentOptions.tag){
+                        const instance = vnode.componentInstance
+                        this.panes.push(instance)
+                        if(instance.$options.propsData.name === this.selectedName){
+                            this.eventBus.$emit('update:selected', this.selectedName, instance)
+                        }
                     }
                 })
             }
-
-
         }
     }
 </script>
 
 <style scoped>
-    .z-tab-header{
-        display: flex;
-    }
+
 </style>
