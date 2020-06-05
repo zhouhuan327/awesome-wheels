@@ -3,7 +3,7 @@ import Input from '@/components/input/input.vue'
 import { mount } from '@vue/test-utils';
 import sinon from 'sinon'
 describe('input', () => {
-    it('存在', () => {
+    it('exist', () => {
         expect(Input).to.exist
     })
     describe('props', () => {

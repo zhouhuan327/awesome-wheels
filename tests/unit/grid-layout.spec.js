@@ -5,7 +5,7 @@ import Col from '@/components/grid/Col.vue'
 import Vue from 'vue'
 import { mount } from '@vue/test-utils'
 describe('grid-layout', () => {
-    it('存在', () => {
+    it('exist', () => {
         expect(Row).to.exist
     })
     it('align是否生效', () => {

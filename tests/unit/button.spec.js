@@ -2,6 +2,9 @@ import { expect } from 'chai'
 import Button from '@/components/Button/button.vue'
 import { mount } from '@vue/test-utils'
 describe('Button.vue', () => {
+    it('exist', () => {
+        expect(Button).to.exist
+    })
     it('测试icon', () => {
         //测试icon
         // const Constructor = Vue.extend(Button)
