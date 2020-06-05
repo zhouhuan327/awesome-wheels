@@ -51,7 +51,7 @@
         mounted() {
             if (this.$slots.default) {
                 this.$slots.default.forEach( vnode =>{
-                    if('z-tab-panel' === vnode.componentOptions.tag){
+                    if(vnode.componentOptions && 'z-tab-panel' === vnode.componentOptions.tag){
                         const instance = vnode.componentInstance
                         this.panes.push(instance)
                     }

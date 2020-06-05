@@ -56,7 +56,6 @@
         }
         &.active{
             color: $tab-active-color;
-            font-weight: 500;
         }
 
     }

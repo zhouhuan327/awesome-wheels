@@ -27,7 +27,8 @@ module.exports = {
                     '/components/icon',
                     '/components/button',
                     '/components/input',
-                    '/components/message'
+                    '/components/message',
+                    '/components/tab'
                 ]
             },
 

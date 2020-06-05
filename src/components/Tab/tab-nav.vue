@@ -55,7 +55,7 @@
         display: flex;
         justify-content: flex-start;
         height: 40px;
-        margin-bottom: 10px;
+        margin-bottom: 6px;
         &::before{
             content:'';
             position: absolute;
@@ -68,7 +68,7 @@
         .z-tab_active-bar{
             position: absolute;
             bottom: 0;
-            border-bottom: 2px solid #1890ff;
+            border-bottom: 3px solid #1890ff;
             transition: all 0.4s ease;
             height: 2px;
             width: 50px;
