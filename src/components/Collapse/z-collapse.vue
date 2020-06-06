@@ -40,8 +40,10 @@
         },
         mounted() {
             this.eventBus.$on('update:active',(name)=>{
-
+               this.$emit('input',name)
             })
+            this.eventBus.$emit('update:active',this.activeName)
+
         }
     }
 </script>

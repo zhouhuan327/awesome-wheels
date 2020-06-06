@@ -56,6 +56,7 @@
 				panel3
 			</z-collapse-item>
 		</z-collapse>
+		active:{{activeName}}
 	</div>
 </template>
 

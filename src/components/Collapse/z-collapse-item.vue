@@ -34,20 +34,17 @@
                     this.active = false
                 }else{
                     this.active = true
-                    this.eventBus.$emit("update:active",this)
+                    if(this.accordion){
+                        this.eventBus.$emit("update:active",this.name)
+                    }
                 }
 
             }
         },
         mounted() {
-            if(this.accordion){
-                this.eventBus.$on('update:active',(vm)=>{
-                    if(vm !== this){
-                        this.active = false
-                    }
-                })
-            }
-
+            this.eventBus.$on('update:active',(name)=>{
+                this.active = name === this.name;
+            })
         }
     }
 </script>
