@@ -45,12 +45,15 @@
 <!--			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>-->
 <!--		</z-tab>-->
 <!--		<p>{{selectedName}}</p>-->
-		<z-collapse v-model="activeName">
+		<z-collapse v-model="activeName" accordion>
 			<z-collapse-item title="header1" name="1">
 				panel2
 			</z-collapse-item>
-			<z-collapse-item title="header1" name="2">
+			<z-collapse-item title="header2" name="2">
 				panel2
+			</z-collapse-item>
+			<z-collapse-item title="header3" name="3">
+				panel3
 			</z-collapse-item>
 		</z-collapse>
 	</div>
