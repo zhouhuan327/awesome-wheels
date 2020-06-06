@@ -33,18 +33,26 @@
 <!--				<z-button icon="setting">hover</z-button>-->
 <!--			</z-popover>-->
 <!--		</z-row>-->
-		<z-tab type="card" v-model="selectedName">
-			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>
-			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>
-			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>
-		</z-tab>
-		<p>{{selectedName}}</p>
-		<z-tab  v-model="selectedName">
-			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>
-			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>
-			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>
-		</z-tab>
-		<p>{{selectedName}}</p>
+<!--		<z-tab type="card" v-model="selectedName">-->
+<!--			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>-->
+<!--			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>-->
+<!--			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>-->
+<!--		</z-tab>-->
+<!--		<p>{{selectedName}}</p>-->
+<!--		<z-tab  v-model="selectedName">-->
+<!--			<z-tab-panel label="标签11111" name="first">内容1</z-tab-panel>-->
+<!--			<z-tab-panel label="标签2" name="second">内容2</z-tab-panel>-->
+<!--			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>-->
+<!--		</z-tab>-->
+<!--		<p>{{selectedName}}</p>-->
+		<z-collapse v-model="activeName">
+			<z-collapse-item title="header1" name="1">
+				panel2
+			</z-collapse-item>
+			<z-collapse-item title="header1" name="2">
+				panel2
+			</z-collapse-item>
+		</z-collapse>
 	</div>
 </template>
 
@@ -56,8 +64,10 @@ import Row from './components/grid/Row.vue'
 import Col from './components/grid/Col.vue'
 import Input from './components/input/input.vue'
 import Popover from "./components/Popover/Popover";
-import Tab from '@/components/Tab/tab'
-import TabPanel from '@/components/Tab/tab-panel'
+import Tab from './components/Tab/tab'
+import TabPanel from './components/Tab/tab-panel'
+import Collapse from './components/Collapse/z-collapse'
+import CollapseItem from './components/Collapse/z-collapse-item'
 export default {
 	name: 'App',
 	components: {
@@ -69,12 +79,15 @@ export default {
 		'z-input': Input,
 		'z-popover':Popover,
 		'z-tab':Tab,
-		'z-tab-panel':TabPanel
+		'z-tab-panel':TabPanel,
+		'z-collapse':Collapse,
+		'z-collapse-item':CollapseItem
 	},
 	data() {
 		return {
 			message: '222',
-			selectedName:'first'
+			selectedName:'first',
+			activeName:'1'
 		}
 	},
 	methods: {
