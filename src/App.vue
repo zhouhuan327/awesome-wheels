@@ -45,7 +45,7 @@
 <!--			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>-->
 <!--		</z-tab>-->
 <!--		<p>{{selectedName}}</p>-->
-		<z-collapse v-model="activeName" accordion>
+		<z-collapse v-model="activeName" accordion >
 			<z-collapse-item title="header1" name="1">
 				panel2
 			</z-collapse-item>
@@ -91,7 +91,7 @@ export default {
 		return {
 			message: '222',
 			selectedName:'first',
-			activeName:'1'
+			activeName:['1','2']
 		}
 	},
 	methods: {

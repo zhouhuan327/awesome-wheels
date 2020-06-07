@@ -1,6 +1,6 @@
 <template>
     <div class="z-collapse-item">
-        <div class="z-collapse-item-head" @click="onClick">
+        <div class="z-collapse-item-head" @click="toggle">
             {{title}}
         </div>
         <div class="z-collapse-item-content" v-if="active ">
@@ -27,23 +27,20 @@
                 required:true
             }
         },
-        inject:['eventBus','accordion'],
+        inject:['eventBus'],
         methods:{
-            onClick(){
+            toggle(){
                 if(this.active){
-                    this.active = false
+                    this.eventBus.$emit('removeActive',this.name)
                 }else{
-                    this.active = true
-                    if(this.accordion){
-                        this.eventBus.$emit("update:active",this.name)
-                    }
+                    this.eventBus.$emit('addActive',this.name)
                 }
 
             }
         },
         mounted() {
-            this.eventBus.$on('update:active',(name)=>{
-                this.active = name === this.name;
+            this.eventBus.$on('update:active',(names)=>{
+                this.active = !!names.includes(this.name);
             })
         }
     }

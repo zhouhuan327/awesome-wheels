@@ -12,7 +12,7 @@
     export default {
         name: "z-collapse",
         model:{
-            prop:'activeName'
+            prop:'activeNames'
         },
         data(){
             return {
@@ -20,8 +20,8 @@
             }
         },
         props:{
-            activeName:{
-                type: String,
+            activeNames:{
+                type: Array,
                 required: true
             },
             type:{
@@ -34,15 +34,31 @@
         },
         provide(){
             return {
-                eventBus: this.eventBus,
-                accordion:this.accordion
+                eventBus: this.eventBus
             }
         },
         mounted() {
-            this.eventBus.$on('update:active',(name)=>{
-               this.$emit('input',name)
+            //通知子组件初始的选中状态
+            this.eventBus.$emit('update:active',this.activeNames)
+
+            this.eventBus.$on('addActive',(name)=>{
+                if(this.accordion){
+                    this.activeNames.length = 0
+                    this.activeNames.push(name)
+                }else{
+                    this.activeNames.push(name)
+                }
+                this.eventBus.$emit('update:active',this.activeNames) //通知子组件
+                this.$emit('input',this.activeNames)//通知外部
             })
-            this.eventBus.$emit('update:active',this.activeName)
+            this.eventBus.$on('removeActive',(name)=>{
+                const index = this.activeNames.indexOf(name)
+                this.activeNames.splice(index,1)
+                this.eventBus.$emit('update:active',this.activeNames)
+                this.$emit('input',this.activeNames)
+
+            })
+
 
         }
     }
