@@ -45,18 +45,23 @@
 <!--			<z-tab-panel label="标签3" name="third">内容3</z-tab-panel>-->
 <!--		</z-tab>-->
 <!--		<p>{{selectedName}}</p>-->
-		<z-collapse v-model="activeName" accordion >
-			<z-collapse-item title="header1" name="1">
-				panel2
-			</z-collapse-item>
-			<z-collapse-item title="header2" name="2">
-				panel2
-			</z-collapse-item>
-			<z-collapse-item title="header3" name="3">
-				panel3
-			</z-collapse-item>
-		</z-collapse>
-		active:{{activeName}}
+<!--		<z-collapse v-model="activeName" accordion >-->
+<!--			<z-collapse-item title="header1" name="1">-->
+<!--				panel2-->
+<!--			</z-collapse-item>-->
+<!--			<z-collapse-item title="header2" name="2">-->
+<!--				panel2-->
+<!--			</z-collapse-item>-->
+<!--			<z-collapse-item title="header3" name="3">-->
+<!--				panel3-->
+<!--			</z-collapse-item>-->
+<!--		</z-collapse>-->
+<!--		active:{{activeName}}-->
+		<z-carousel>
+			<z-carousel-item >1</z-carousel-item>
+			<z-carousel-item >2</z-carousel-item>
+			<z-carousel-item >3</z-carousel-item>
+		</z-carousel>
 	</div>
 </template>
 
@@ -72,6 +77,8 @@ import Tab from './components/Tab/tab'
 import TabPanel from './components/Tab/tab-panel'
 import Collapse from './components/Collapse/z-collapse'
 import CollapseItem from './components/Collapse/z-collapse-item'
+import Carousel from "@/components/Carousel/Carousel";
+import CarouselItem from '@/components/Carousel/Carousel-item'
 export default {
 	name: 'App',
 	components: {
@@ -85,7 +92,9 @@ export default {
 		'z-tab':Tab,
 		'z-tab-panel':TabPanel,
 		'z-collapse':Collapse,
-		'z-collapse-item':CollapseItem
+		'z-collapse-item':CollapseItem,
+		'z-carousel':Carousel,
+		'z-carousel-item':CarouselItem
 	},
 	data() {
 		return {
@@ -103,7 +112,9 @@ export default {
 				showClose:true,
 				useHtmlString:true
 			})
-		},
+		}
+	},
+	mounted() {
 
 	}
 }

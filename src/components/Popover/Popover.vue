@@ -56,20 +56,20 @@
 
                 switch (this.position) {
                     case "top":
-                        content.style.left = left   + 'px'
-                        content.style.top = top + 'px'
+                        content.style.left = left + window.scrollX  + 'px'
+                        content.style.top = top + +window.scrollY + 'px'
                         break
                     case "bottom":
-                        content.style.left = left  + 'px'
-                        content.style.top = top + height + 'px'
+                        content.style.left = left + window.scrollX  + 'px'
+                        content.style.top = top + height + window.scrollY + 'px'
                         break
                     case "left":
-                        content.style.left = left + 'px'
-                        content.style.top = top + 'px'
+                        content.style.left = left + window.scrollY + 'px'
+                        content.style.top = top + window.scrollX + 'px'
                         break
                     case "right":
-                        content.style.left = left + width + 'px'
-                        content.style.top = top + 'px'
+                        content.style.left = left + window.scrollY + width + 'px'
+                        content.style.top = top + window.scrollX + 'px'
                         break
 
                 }
@@ -136,6 +136,7 @@
         box-shadow:0 2px 12px 0 rgba(0,0,0,.1);
         background:$popover-bg-color;
         padding:0.5em 1em;
+        z-index: 10;
         &::before{
             content: '';
             display: block;

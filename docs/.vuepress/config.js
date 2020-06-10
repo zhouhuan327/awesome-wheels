@@ -28,7 +28,8 @@ module.exports = {
                     '/components/button',
                     '/components/input',
                     '/components/message',
-                    '/components/tab'
+                    '/components/tab',
+                    '/components/popover'
                 ]
             },
 
