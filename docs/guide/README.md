@@ -7,8 +7,8 @@ title: 介绍
 [![Build Status](https://www.travis-ci.org/zhouhuan327/awesome-wheels.svg?branch=master)](https://www.travis-ci.org/zhouhuan327/awesome-wheels)
 [![npm version](https://badge.fury.io/js/awesome-wheels.svg)](https://badge.fury.io/js/awesome-wheels)
 
-awesome-wheels是一个简易的ui框架，目前提供了一些常用的组件，适合pc和移动端使用。
-项目仅作为个人练手项目，暂时不建议使用
+awesome-wheels是一个基于Vue的ui组件库，目前提供了一些常用的组件，适合pc和移动端使用。
+组件库会持续更新并测试
 
 ## 支持的组件
  Button✔,ButtonGroup✔,Grid Layout✔,Message✔,Popover✔
