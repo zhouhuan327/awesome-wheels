@@ -64,12 +64,12 @@
                         content.style.top = top + height + window.scrollY + 'px'
                         break
                     case "left":
-                        content.style.left = left + window.scrollY + 'px'
-                        content.style.top = top + window.scrollX + 'px'
+                        content.style.left = left + window.scrollX + 'px'
+                        content.style.top = top + window.scrollY + 'px'
                         break
                     case "right":
-                        content.style.left = left + window.scrollY + width + 'px'
-                        content.style.top = top + window.scrollX + 'px'
+                        content.style.left = left + window.scrollX + width + 'px'
+                        content.style.top = top + window.scrollY + 'px'
                         break
 
                 }
@@ -133,24 +133,21 @@
         max-width: 15em;
         word-break: break-all;
         text-align: center;
-        box-shadow:0 2px 12px 0 rgba(0,0,0,.1);
+        box-shadow:0 3px 6px -4px rgba(0,0,0,.12), 0 6px 16px 0 rgba(0,0,0,.08), 0 9px 28px 8px rgba(0,0,0,.05);
         background:$popover-bg-color;
         padding:0.5em 1em;
         z-index: 10;
         &::before{
             content: '';
             display: block;
-            width: 10px;
-            height: 10px;
             position: absolute;
-
         }
         &.position-top{
             transform: translateY(-100%);
             margin-top: -12px;
             &::before{
                 top: 100%;
-                border: 10px solid transparent;
+                border: 8px solid transparent;
                 border-top-color: $popover-bg-color;
             }
         }
