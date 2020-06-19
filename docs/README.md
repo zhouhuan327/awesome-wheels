@@ -1,9 +1,9 @@
 ---
 home: true
-heroImage: /logo.png
+heroImage: /logo2.png
 heroText: awesome-wheels
-tagline: 花里胡哨的组件库
-actionText: getStart →
+tagline: 一个易用的ui框架
+actionText: 开始 →
 actionLink: /guide/
 features:
 - title: 无依赖，体积小，简单易用
