@@ -1,11 +1,11 @@
 <template>
     <div id="app">
 
-        <z-tab type="card" v-model="selectedName">
-            <z-tab-panel label="标签1" name="first">1</z-tab-panel>
-            <z-tab-panel label="标签2" name="second">2</z-tab-panel>
-            <z-tab-panel label="标签3" name="third">3</z-tab-panel>
-        </z-tab>
+        <z-collapse accordion  v-model="activeName">
+            <z-collapse-item name="1" title="第一">2323fadf</z-collapse-item>
+            <z-collapse-item name="2" title="第而">2323fadfdf</z-collapse-item>
+            <z-collapse-item name="3" title="第三">2323fsdfsadf</z-collapse-item>
+        </z-collapse>
     </div>
 </template>
 
@@ -45,7 +45,7 @@
             return {
                 message: '222',
                 selectedName: 'first',
-                activeName: ['1', '2']
+                activeName: ['1']
             }
         },
         methods: {

@@ -58,6 +58,7 @@
             user-select: none;
         }
         .z-collapse-item-content{
+            width: 100%;
             overflow: hidden;
             max-height: 0;
             transition: all 0.3s ease;

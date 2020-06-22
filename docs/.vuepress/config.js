@@ -28,8 +28,9 @@ module.exports = {
                     '/components/button',
                     '/components/input',
                     '/components/message',
+                    '/components/popover',
                     '/components/tab',
-                    '/components/popover'
+                    '/components/collapse'
                 ]
             },
 
