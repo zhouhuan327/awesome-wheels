@@ -16,7 +16,7 @@ title: Icon 图标
 <Icon></Icon>
 </ClientOnly>
 
-```javascript
+```vue
  <z-icon name="setting"></z-icon>
  <z-icon name="start"></z-icon>
  <z-icon name="thumbs-up"></z-icon>
@@ -30,7 +30,7 @@ title: Icon 图标
 <Icon3D></Icon3D>
 </ClientOnly>
 
-```javascript
+```vue
 <z-icon cool-hover="start">收藏</z-icon>
 <z-icon cool-hover="thumbs-up">点赞</z-icon>
 <z-icon cool-hover="setting">设置</z-icon>
@@ -48,7 +48,7 @@ title: Icon 图标
 
 
 
-```javascript
+```vue
 <div class="container">
     <div>
         <z-button plain icon="setting">默认按钮</z-button>

@@ -13,7 +13,7 @@ title: Tab 标签页
 <TabDemo></TabDemo>
 </ClientOnly>
 
-```javascript
+```vue
 <template>
 <div class="container">
     <z-tab v-model="selectedName">
@@ -41,7 +41,7 @@ export default {
 <TabCard></TabCard>
 </ClientOnly>
 
-```javascript
+```vue
 <div class="container">
     <z-tab type="card" v-model="selectedName">
         <z-tab-panel label="Tab1" name="first">内容1</z-tab-panel>

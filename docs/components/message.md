@@ -12,7 +12,7 @@ title: Message 消息提示
 <Message></Message>
 </ClientOnly>
 
-```javascript
+```vue
 <template>
     <div class="container">
         <z-button plain @click="open">弹出消息提示</z-button>
@@ -22,7 +22,6 @@ title: Message 消息提示
     </div>
 </template>
 <script>
-import Button from '../../../src/components/Button/button'
 export default {
     name: "Message",
     components:{
@@ -63,23 +62,27 @@ export default {
 <MessageDuration></MessageDuration>
 </ClientOnly>
 
-```javascript
-methods:{
-    open1(){
-        this.$message({
-            message:'1s后消失',
-            type:'success',
-            duration:1
-        })
-    },
-    open2(){
-        this.$message({
-            message:'5s后消示',
-            duration:5
-
-        })
-    },
-}
+```vue
+<script >
+    export default {
+        methods:{
+            open1(){
+                this.$message({
+                    message:'1s后消失',
+                    type:'success',
+                    duration:1
+                })
+            },
+            open2(){
+                this.$message({
+                    message:'5s后消示',
+                    duration:5
+        
+                })
+            },
+        }
+    }   
+</script>
 ```
 ## 可关闭
 
@@ -89,12 +92,20 @@ methods:{
 <MessageClose></MessageClose>
 </ClientOnly>
 
-```javascript
-this.$message({
-    message:'可关闭',
-    type:'success',
-    showClose:true
-})
+```vue
+<script>
+    export default {
+        methods:{
+            open1(){
+                this.$message({
+                    message:'可关闭',
+                    type:'success',
+                    showClose:true
+                })
+            },
+        }
+    }
+</script>
 ```
 
 ## 使用HTML片段
@@ -106,9 +117,17 @@ this.$message({
 <MessageHtml></MessageHtml>
 </ClientOnly>
 
-```javascript
-this.$message({
-    message:'<p style="color:red">这是一段html片段</p>',
-    useHtmlString:true
-})
+```vue
+<script>
+    export default {
+        methods:{
+            open(){
+                this.$message({
+                    message:'<p style="color:red">这是一段html片段</p>',
+                    useHtmlString:true
+                })
+            }
+        }
+    }
+</script>
 ```

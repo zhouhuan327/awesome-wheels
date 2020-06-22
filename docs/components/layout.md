@@ -11,7 +11,7 @@ title: Layout 布局
 <LayoutDemo></LayoutDemo>
 </ClientOnly>
 
-```javascript
+```vue
 <z-row>
     <z-col :span="24"><div class="grid-content bg1"></div></z-col>
 </z-row>
@@ -39,7 +39,7 @@ title: Layout 布局
  <LayoutGutter></LayoutGutter>
  </ClientOnly>
  
-```javascript
+```vue
 <z-row :gutter="20">
     <z-col :span="10"><div class="grid-content bg1"></div></z-col>
     <z-col :span="10"><div class="grid-content bg2"></div></z-col>
@@ -58,7 +58,7 @@ title: Layout 布局
 <LayoutOffset></LayoutOffset>
 </ClientOnly>
 
-```javascript
+```vue
  <z-row>
     <z-col :span="6" ><div class="grid-content bg1"></div></z-col>
     <z-col :span="6" ><div class="grid-content bg2"></div></z-col>
@@ -77,7 +77,7 @@ title: Layout 布局
 <LayoutAlign></LayoutAlign>
 </ClientOnly>
 
-```javascript
+```vue
 <z-row align="center" :gutter="20">
     <z-col :span="4" ><div class="grid-content bg1"></div></z-col>
     <z-col :span="4"><div class="grid-content bg2"></div></z-col>
@@ -104,7 +104,7 @@ title: Layout 布局
 <Layoutsml></Layoutsml>
 </ClientOnly>
 
-```javascript
+```vue
 <z-row :gutter="10">
     <z-col :sm="20" :md="5" :lg="10"><div class="grid-content bg1"></div></z-col>
     <z-col :sm="20" :md="5" :lg="10"><div class="grid-content bg2"></div></z-col>

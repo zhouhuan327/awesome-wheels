@@ -13,7 +13,7 @@ title: Button 按钮
 <ButtonDemo></ButtonDemo>
 </ClientOnly>
 
-```javascript
+```vue
 <z-button >默认按钮</z-button>
 <z-button plain type="primary">主要按钮</z-button>
 <z-button round type="primary">主要按钮</z-button>
@@ -28,7 +28,7 @@ title: Button 按钮
 <ButtonGraient></ButtonGraient>
 </ClientOnly>
 
-```javascript
+```vue
 <template>
     <div class="container">
         <z-button class="bg1" gradient>Hover Me</z-button>
@@ -53,7 +53,7 @@ title: Button 按钮
 <ButtonDisabled></ButtonDisabled>
 </ClientOnly>
 
-```javascript
+```vue
 <z-button disabled>默认按钮</z-button>
 <z-button disabled type="primary">主要按钮</z-button>
 <z-button disabled type="success">成功按钮</z-button>
@@ -70,7 +70,7 @@ title: Button 按钮
 <ButtonIcon></ButtonIcon>
 </ClientOnly>
 
-```javascript
+```vue
 <z-button plain icon="setting">默认按钮</z-button>
 <z-button round icon="setting">默认按钮</z-button>
 <z-button disabled icon="setting">默认按钮</z-button>
@@ -89,7 +89,7 @@ title: Button 按钮
 <ButtonGroup></ButtonGroup>
 </ClientOnly>
 
-```javascript
+```vue
 <z-button-group>
   <z-button icon="arrow-left">上一页</z-button>
   <z-button>更多</z-button>

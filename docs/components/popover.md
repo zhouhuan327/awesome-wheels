@@ -11,7 +11,7 @@ title: Popover 弹出框
 <PopoverPosition></PopoverPosition>
 </ClientOnly>
 
-```javascript
+```vue
 <z-popover position="top">
     <template slot="content">
     	这是一段消息
@@ -49,7 +49,7 @@ title: Popover 弹出框
 
 
 
-```javascript
+```vue
 <z-popover position="top">
     <template slot="content">
     	这是弹出的消息

@@ -9,7 +9,7 @@ title: input 输入框
 <ZInput></ZInput>
 </ClientOnly>
 
-```javascript
+```vue
 <z-input v-model="value" placeholder="基础输入框"></z-input>
 
 <z-input disabled placeholder="禁用状态"></z-input>
