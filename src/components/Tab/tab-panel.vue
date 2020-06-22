@@ -1,36 +1,60 @@
 <template>
-    <div class="z-tab-panel" :style="{display:active?null:'none'}">
-        <slot></slot>
-    </div>
+    <transition tag="div"  name="slide" mode="out-in" >
+        <div class="z-tab-panel" v-if="active" ref="panel">
+            <slot></slot>
+        </div>
+    </transition>
 </template>
 
 <script>
     export default {
         name: "z-tab-panel",
         props:{
-            label:String,
-            name:String
+            label:{
+                type:String,
+                required: true
+            },
+            name:{
+                type:String,
+                required:true
+            }
         },
         data () {
             return {
-                active: false
+                active: false,
+                height:'height:0px'
             }
         },
         inject: ['eventBus'],
         mounted() {
-            this.eventBus.$on('update:selected',(name,vm) => {
-                // console.log(`${item}被选中,panel ${this.label}收到`)
+            this.eventBus.$on('update:selected',(name) => {
+
                 this.active = name === this.name
             })
-        },
-        methods:{
-
         }
     }
 </script>
 
 <style lang="scss" scoped>
     .z-tab-panel{
+        position: absolute;
         padding: 14px 1em;
+    }
+    .wrapper{
+        position: relative;
+    }
+    .slide-enter{
+        transform: translateX(100%);
+    }
+    .slide-leave-to{
+        transform: translateX(-50%);
+    }
+    .slide-leave-active{
+        transition: all 0.2s ease-in-out ;
+        opacity: 0.1;
+    }
+    .slide-enter-active,{
+        transition: all 0.3s ease-in-out ;
+        opacity: 0.2;
     }
 </style>

@@ -84,7 +84,7 @@
     padding: 5px 16px;
     @include message-color(gray,#edf2fc,#edf2fc);
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     .closeButton{
         position: absolute;
         top: 20px;
